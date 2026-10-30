@@ -82,8 +82,57 @@ export const LoginGateway: React.FC = () => {
   const [selectedRole, setSelectedRole] = useState<RoleType>('ROLE_STUDENT');
   const [isAuthenticating, setIsAuthenticating] = useState(false);
   const [authStep, setAuthStep] = useState<string>('');
+  const [dummyUsername, setDummyUsername] = useState<string>('admin');
+  const [dummyPassword, setDummyPassword] = useState<string>('GovTech@2026!');
 
   const currentProfile = GOOGLE_PROFILES[selectedRole];
+
+  const handleCredentialLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    const cleanUser = (dummyUsername || '').trim().toLowerCase();
+    let targetRole: RoleType = 'ROLE_STUDENT';
+    if (cleanUser === 'admin' || cleanUser.includes('admin') || cleanUser.includes('nodal')) {
+      targetRole = 'ROLE_INST_NODAL';
+    } else if (cleanUser === 'aicte' || cleanUser.includes('council')) {
+      targetRole = 'ROLE_COUNCIL_ADMIN';
+    } else if (cleanUser === 'verifier' || cleanUser.includes('bgv')) {
+      targetRole = 'ROLE_VERIFIER';
+    } else {
+      targetRole = 'ROLE_STUDENT';
+    }
+    
+    setSelectedRole(targetRole);
+    const prof = GOOGLE_PROFILES[targetRole];
+    const timestamp = Date.now();
+    const fakeJwt = `eyJhbGciOiJSUzI1NiIsImtpZCI6Imdvb2dsZS1rZXktMjAyNiJ9.${btoa(JSON.stringify({
+      iss: 'https://accounts.google.com',
+      aud: 'apaar-setu-gov-in.apps.googleusercontent.com',
+      sub: `mock-uid-${timestamp}`,
+      email: prof.email,
+      name: prof.name,
+      role: prof.role,
+      identifier: prof.identifier,
+      iat: Math.floor(timestamp / 1000),
+      exp: Math.floor(timestamp / 1000) + 3600
+    }))}.mock_signature_verified`;
+
+    const session: OAuthSession = {
+      accessToken: fakeJwt,
+      tokenType: 'Bearer',
+      scope: prof.scope,
+      userProfile: {
+        name: prof.name,
+        role: prof.role,
+        identifier: prof.identifier,
+        tenantPid: prof.tenantPid,
+        apaarId: prof.apaarId,
+        provider: 'Mock Credentials Bypass',
+        email: prof.email,
+      },
+      issuedAt: new Date().toISOString(),
+    };
+    loginWithOAuth(session);
+  };
 
   const handleSignInWithGoogle = async () => {
     setIsAuthenticating(true);
@@ -354,6 +403,50 @@ export const LoginGateway: React.FC = () => {
                   <span className="font-semibold text-slate-700">Authority: {currentProfile.authorityTitle}</span>
                   <span className="text-slate-500 truncate">Domain: {currentProfile.domain}</span>
                 </div>
+              </div>
+
+              {/* Dummy Credentials Mock Form */}
+              <form onSubmit={handleCredentialLogin} className="space-y-3 pt-1 border-t border-slate-100">
+                <div className="grid grid-cols-2 gap-2 text-left">
+                  <div>
+                    <label className="text-[11px] font-bold text-slate-700 block mb-0.5">
+                      Username
+                    </label>
+                    <input
+                      type="text"
+                      value={dummyUsername}
+                      onChange={(e) => setDummyUsername(e.target.value)}
+                      placeholder="'admin' or 'user'"
+                      className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 font-mono focus:outline-none focus:ring-1 focus:ring-blue-600"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-[11px] font-bold text-slate-700 block mb-0.5">
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      value={dummyPassword}
+                      onChange={(e) => setDummyPassword(e.target.value)}
+                      placeholder="Any password"
+                      className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 font-mono focus:outline-none focus:ring-1 focus:ring-blue-600"
+                    />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full py-2 px-3 rounded-lg bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs transition-colors shadow-xs"
+                >
+                  Sign In with Mock Credentials
+                </button>
+              </form>
+
+              <div className="relative flex py-1 items-center">
+                <div className="flex-grow border-t border-slate-200"></div>
+                <span className="flex-shrink mx-2 text-[10px] font-bold text-slate-400 uppercase">
+                  Or 1-Click Google OAuth
+                </span>
+                <div className="flex-grow border-t border-slate-200"></div>
               </div>
 
               {/* Google Authentication Progress State or Button */}
