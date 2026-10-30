@@ -24,41 +24,26 @@ export const Auth = ({ onAuthSuccess }) => {
   const [institutionId, setInstitutionId] = useState('COL-LNCTE-001');
 
   // --------------------------------------------------------------------------
-  // TAB 1: Student Google OAuth 2.0 Handler
+  // TAB 1: Student Google OAuth 2.0 Handler (Mocked Bypass)
   // --------------------------------------------------------------------------
-  const handleGoogleSuccess = async (credentialResponse) => {
+  const handleGoogleSuccess = async (_credentialResponse) => {
     setIsLoading(true);
     setErrorMessage(null);
 
-    try {
-      // Send verified Google JWT credential to Node.js backend
-      const response = await fetch(`${API_BASE_URL}/api/auth/google`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: 'include', // Receives HTTP-only cookie
-        body: JSON.stringify({
-          credential: credentialResponse.credential
-        })
-      });
-
-      const data = await response.json();
-
-      if (!response.ok || !data.success) {
-        throw new Error(data.message || 'Google token validation failed on backend');
-      }
-
-      setSuccessUser(data.user);
+    setTimeout(() => {
+      const mockUser = {
+        id: 'usr_student_002',
+        name: 'Pritam Raj Chaurasiya',
+        email: 'pritam.raj@student.gov.in',
+        role: 'ROLE_STUDENT',
+        apaarId: '7841-9023-4412'
+      };
+      setSuccessUser(mockUser);
       if (onAuthSuccess) {
-        onAuthSuccess(data.user);
+        onAuthSuccess(mockUser);
       }
-    } catch (err) {
-      console.error('[GOOGLE AUTH CLIENT ERROR]', err);
-      setErrorMessage(err.message || 'Google OAuth verification failed. Please try again.');
-    } finally {
       setIsLoading(false);
-    }
+    }, 300);
   };
 
   const handleGoogleError = () => {
@@ -66,43 +51,27 @@ export const Auth = ({ onAuthSuccess }) => {
   };
 
   // --------------------------------------------------------------------------
-  // TAB 2: Admin Email/Password Handler
+  // TAB 2: Admin Email/Password Handler (Mocked Bypass)
   // --------------------------------------------------------------------------
   const handleAdminLogin = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setErrorMessage(null);
 
-    try {
-      const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: 'include', // Receives HTTP-only cookie
-        body: JSON.stringify({
-          email: adminEmail,
-          password: adminPassword,
-          institutionId
-        })
-      });
-
-      const data = await response.json();
-
-      if (!response.ok || !data.success) {
-        throw new Error(data.message || 'Invalid administrative credentials');
-      }
-
-      setSuccessUser(data.user);
+    setTimeout(() => {
+      const mockUser = {
+        id: 'usr_admin_001',
+        name: 'Dr. Alok Verma',
+        email: adminEmail,
+        role: 'ROLE_INST_NODAL',
+        institutionId: institutionId || 'COL-LNCTE-001'
+      };
+      setSuccessUser(mockUser);
       if (onAuthSuccess) {
-        onAuthSuccess(data.user);
+        onAuthSuccess(mockUser);
       }
-    } catch (err) {
-      console.error('[ADMIN LOGIN CLIENT ERROR]', err);
-      setErrorMessage(err.message || 'Administrative login failed.');
-    } finally {
       setIsLoading(false);
-    }
+    }, 300);
   };
 
   return (
