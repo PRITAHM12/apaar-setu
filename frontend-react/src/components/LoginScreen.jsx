@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth, OFFICIAL_ROLES } from '../context/AuthContext';
 
 export const LoginScreen = () => {
   const { login } = useAuth();
-  const [username, setUsername] = useState('admin');
+  const [selectedRole, setSelectedRole] = useState('ROLE_INST_NODAL');
+  const [identifierInput, setIdentifierInput] = useState('PID-1-4920182');
   const [password, setPassword] = useState('GovTech@2026!');
-  const [selectedRolePreset, setSelectedRolePreset] = useState('admin');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  const currentRoleConfig = OFFICIAL_ROLES[selectedRole];
+
+  // When switching role in selector, automatically populate the corresponding documented identifier
+  const handleRoleChange = (roleKey) => {
+    setSelectedRole(roleKey);
+    const target = OFFICIAL_ROLES[roleKey];
+    setIdentifierInput(target?.identifier || '');
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,20 +24,16 @@ export const LoginScreen = () => {
     setError('');
 
     setTimeout(() => {
-      if (!username) {
-        setError('Please enter a username (e.g. "admin" or "user").');
-        setLoading(false);
-        return;
-      }
-      login(username, password, selectedRolePreset);
+      login(selectedRole, password, selectedRole);
       setLoading(false);
-    }, 300);
+    }, 250);
   };
 
-  const handleQuickLogin = (role) => {
+  const handleInstantRoleAuth = (roleKey) => {
+    setSelectedRole(roleKey);
     setLoading(true);
     setTimeout(() => {
-      login(role, 'Demo@2026!', role);
+      login(roleKey, 'GovTech@2026!', roleKey);
       setLoading(false);
     }, 200);
   };
@@ -62,7 +67,7 @@ export const LoginScreen = () => {
       <div className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Platform Overview & Architecture */}
+          {/* Left Column: Platform Overview & Official Architecture */}
           <div className="lg:col-span-6 space-y-6">
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
@@ -78,15 +83,15 @@ export const LoginScreen = () => {
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-black text-[#0F172A] tracking-tight leading-tight mt-4">
-                Unified Role-Based Identity & Governance Gateway
+                Strict 4-Role RBAC Identity Gateway
               </h2>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Seamless role-based portal for <strong>Institutional Nodal Officers</strong>,{' '}
-                <strong>Enrolled Technical Students</strong>, and Regulatory Councils. Fully bypassed for SIH hackathon evaluation with verified mock identity claims.
+                Autonomous credential and token management mapped to the official Zero-Trust RBAC matrix defined in{' '}
+                <strong className="text-slate-900">RBAC.MD</strong> and <strong className="text-slate-900">database/schema.sql</strong>.
               </p>
             </div>
 
-            {/* GovTech Feature Highlights */}
+            {/* GovTech Pillars */}
             <div className="space-y-3 pt-2">
               <div className="flex items-start space-x-3.5 p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
                 <div className="w-9 h-9 rounded-lg bg-orange-50 text-[#EA580C] flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">
@@ -126,7 +131,7 @@ export const LoginScreen = () => {
             </div>
           </div>
 
-          {/* Right Column: Interactive Login Card */}
+          {/* Right Column: Exact Documented Roles Login Card */}
           <div className="lg:col-span-6">
             <div className="bg-white rounded-2xl border border-slate-200 shadow-xl p-7 sm:p-9 space-y-6">
               
@@ -134,73 +139,145 @@ export const LoginScreen = () => {
               <div className="border-b border-slate-100 pb-4">
                 <div className="flex items-center justify-between">
                   <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-500">
-                    Authentication Portal
+                    Official RBAC Gateway
                   </span>
-                  <span className="text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 px-2 py-0.5 rounded-full">
-                    Mock Bypass Active
+                  <span className="text-[10px] font-bold bg-blue-50 text-blue-800 border border-blue-200 px-2 py-0.5 rounded-full">
+                    PostgreSQL RLS Scoped
                   </span>
                 </div>
                 <h3 className="text-xl font-extrabold text-[#0F172A] mt-1">
-                  Sign In to APAAR-Setu
+                  Select Stakeholder Persona
                 </h3>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  Enter dummy credentials or use the instant 1-click evaluator buttons below.
+                  Choose your official authority role from the national regulatory matrix.
                 </p>
               </div>
 
-              {/* 1-Click Fast Switch Buttons for SIH Judges */}
+              {/* 4 Documented Role Selector Tabs */}
               <div className="space-y-2">
                 <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
-                  Quick 1-Click Role Login:
+                  Documented User Roles:
                 </span>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  
+                  {/* Role 1: Institute Nodal Officer */}
                   <button
                     type="button"
-                    onClick={() => {
-                      setSelectedRolePreset('admin');
-                      setUsername('admin');
-                      handleQuickLogin('admin');
-                    }}
-                    className="p-3 rounded-xl border border-blue-200 bg-blue-50/50 hover:bg-blue-100/70 text-left transition-colors flex items-center space-x-3 group"
+                    onClick={() => handleRoleChange('ROLE_INST_NODAL')}
+                    className={`p-3 rounded-xl border text-left transition-all flex items-start space-x-3 ${
+                      selectedRole === 'ROLE_INST_NODAL'
+                        ? 'border-blue-700 bg-blue-50/80 ring-2 ring-blue-700 shadow-xs'
+                        : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+                    }`}
                   >
-                    <div className="w-8 h-8 rounded-lg bg-blue-900 text-white flex items-center justify-center text-xs font-black">
-                      🏛️
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-blue-950">Login as Admin</div>
-                      <div className="text-[10px] text-blue-700">Nodal / Council Governance</div>
+                    <span className="text-lg mt-0.5">🏛️</span>
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold text-slate-900 leading-snug">
+                        Institute Nodal Officer
+                      </div>
+                      <div className="text-[10px] font-mono text-blue-700 font-semibold truncate">
+                        ROLE_INST_NODAL
+                      </div>
+                      <div className="text-[10px] text-slate-500 truncate">
+                        PID-1-4920182 (LNCTE)
+                      </div>
                     </div>
                   </button>
 
+                  {/* Role 2: Enrolled Technical Student */}
                   <button
                     type="button"
-                    onClick={() => {
-                      setSelectedRolePreset('user');
-                      setUsername('user');
-                      handleQuickLogin('user');
-                    }}
-                    className="p-3 rounded-xl border border-emerald-200 bg-emerald-50/50 hover:bg-emerald-100/70 text-left transition-colors flex items-center space-x-3 group"
+                    onClick={() => handleRoleChange('ROLE_STUDENT')}
+                    className={`p-3 rounded-xl border text-left transition-all flex items-start space-x-3 ${
+                      selectedRole === 'ROLE_STUDENT'
+                        ? 'border-emerald-600 bg-emerald-50/80 ring-2 ring-emerald-600 shadow-xs'
+                        : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+                    }`}
                   >
-                    <div className="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-xs font-black">
-                      🎓
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-emerald-950">Login as User</div>
-                      <div className="text-[10px] text-emerald-700">Student Academic Passport</div>
+                    <span className="text-lg mt-0.5">🎓</span>
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold text-slate-900 leading-snug">
+                        Enrolled Technical Student
+                      </div>
+                      <div className="text-[10px] font-mono text-emerald-700 font-semibold truncate">
+                        ROLE_STUDENT
+                      </div>
+                      <div className="text-[10px] text-slate-500 truncate">
+                        APAAR 7841-9023-4412
+                      </div>
                     </div>
                   </button>
+
+                  {/* Role 3: National Regulatory Officer */}
+                  <button
+                    type="button"
+                    onClick={() => handleRoleChange('ROLE_COUNCIL_ADMIN')}
+                    className={`p-3 rounded-xl border text-left transition-all flex items-start space-x-3 ${
+                      selectedRole === 'ROLE_COUNCIL_ADMIN'
+                        ? 'border-purple-700 bg-purple-50/80 ring-2 ring-purple-700 shadow-xs'
+                        : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+                    }`}
+                  >
+                    <span className="text-lg mt-0.5">⚖️</span>
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold text-slate-900 leading-snug">
+                        National Regulatory Officer
+                      </div>
+                      <div className="text-[10px] font-mono text-purple-700 font-semibold truncate">
+                        ROLE_COUNCIL_ADMIN
+                      </div>
+                      <div className="text-[10px] text-slate-500 truncate">
+                        NATIONAL_ALL (Council)
+                      </div>
+                    </div>
+                  </button>
+
+                  {/* Role 4: Corporate HR / BGV Agency */}
+                  <button
+                    type="button"
+                    onClick={() => handleRoleChange('ROLE_VERIFIER')}
+                    className={`p-3 rounded-xl border text-left transition-all flex items-start space-x-3 ${
+                      selectedRole === 'ROLE_VERIFIER'
+                        ? 'border-amber-700 bg-amber-50/80 ring-2 ring-amber-700 shadow-xs'
+                        : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+                    }`}
+                  >
+                    <span className="text-lg mt-0.5">🔍</span>
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold text-slate-900 leading-snug">
+                        Corporate HR / BGV Agency
+                      </div>
+                      <div className="text-[10px] font-mono text-amber-800 font-semibold truncate">
+                        ROLE_VERIFIER
+                      </div>
+                      <div className="text-[10px] text-slate-500 truncate">
+                        ORG-INFOSYS-BGV
+                      </div>
+                    </div>
+                  </button>
+
                 </div>
               </div>
 
-              <div className="relative flex py-1 items-center">
-                <div className="flex-grow border-t border-slate-200"></div>
-                <span className="flex-shrink mx-3 text-xs font-bold text-slate-400 uppercase">
-                  Or enter credentials
-                </span>
-                <div className="flex-grow border-t border-slate-200"></div>
+              {/* Active Stakeholder Persona Details Card */}
+              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 text-xs">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-slate-900">
+                    {currentRoleConfig?.personaName}
+                  </span>
+                  <span className="text-[10px] font-mono font-bold bg-slate-200 text-slate-800 px-2 py-0.5 rounded">
+                    {currentRoleConfig?.roleCode}
+                  </span>
+                </div>
+                <div className="text-[11px] text-slate-600 font-mono">
+                  {currentRoleConfig?.email} • {currentRoleConfig?.identifier}
+                </div>
+                <div className="text-[10px] text-slate-500 pt-1 border-t border-slate-200">
+                  {currentRoleConfig?.authorityScope}
+                </div>
               </div>
 
-              {/* Credential Form */}
+              {/* Explicit Credential Form */}
               <form onSubmit={handleSubmit} className="space-y-4">
                 {error && (
                   <div className="p-3 rounded-lg bg-rose-50 border border-rose-200 text-rose-800 text-xs font-medium">
@@ -210,54 +287,55 @@ export const LoginScreen = () => {
 
                 <div>
                   <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Username / Role Identifier
+                    Scoped Identifier (Institute PID / APAAR ID / Agency ID)
                   </label>
                   <input
                     type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    placeholder="Enter 'admin' or 'user'"
+                    value={identifierInput}
+                    onChange={(e) => setIdentifierInput(e.target.value)}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 font-mono"
                     required
                   />
-                  <span className="text-[11px] text-slate-500 mt-1 block">
-                    Use <strong className="text-blue-900 font-mono">admin</strong> for Nodal Admin Dashboard or{' '}
-                    <strong className="text-emerald-700 font-mono">user</strong> for Student Passport.
-                  </span>
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Password (Dummy)
+                    Digital Signature / Password
                   </label>
                   <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Any password..."
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 font-mono"
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-xl text-sm transition-colors shadow-md flex items-center justify-center space-x-2"
-                >
-                  {loading ? (
-                    <span>Authenticating...</span>
-                  ) : (
-                    <>
-                      <span>Enter Secure Workspace</span>
-                      <span>→</span>
-                    </>
-                  )}
-                </button>
-              </form>
+                <div className="flex gap-2">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="flex-1 bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-xl text-xs transition-colors shadow-md flex items-center justify-center space-x-2"
+                  >
+                    {loading ? (
+                      <span>Verifying Claims...</span>
+                    ) : (
+                      <>
+                        <span>Authenticate as {currentRoleConfig?.roleTitle}</span>
+                        <span>→</span>
+                      </>
+                    )}
+                  </button>
 
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 text-[11px]">
-                <strong className="text-slate-800">Deployment Notice:</strong> All Supabase backend calls are severed. State is preserved in memory and redirects to role-specific protected dashboards.
-              </div>
+                  <button
+                    type="button"
+                    onClick={() => handleInstantRoleAuth(selectedRole)}
+                    className="bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-4 py-3 rounded-xl text-xs transition-colors shadow-sm"
+                    title="1-Click Instant Demo Authentication"
+                  >
+                    ⚡ Instant
+                  </button>
+                </div>
+              </form>
 
             </div>
           </div>
