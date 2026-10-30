@@ -1,0 +1,23 @@
+{
+  "name": "apaar-setu-api-gateway",
+  "version": "1.0.0",
+  "description": "APAAR-Setu Node.js + Express API Gateway — PROTOTYPE NON-OFFICIAL CONCEPT | ZERO-TRUST RBAC ENGINE",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node --check server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "google-auth-library": "^11.3.2",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.0",
+    "uuid": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

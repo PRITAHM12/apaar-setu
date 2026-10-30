@@ -1,0 +1,1554 @@
+{
+  "institutions": {
+    "PID-1-4920182": {
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "pid": "PID-1-4920182",
+      "name": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "approvedIntake": 60,
+      "currentEnrollment": 58,
+      "supernumeraryCount": 3,
+      "nriOciCount": 2,
+      "foreignNationalCount": 1
+    },
+    "PID-1-3310": {
+      "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "pid": "PID-1-3310",
+      "name": "Institute of Engineering & Science - Tenant B",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "approvedIntake": 120,
+      "currentEnrollment": 114,
+      "supernumeraryCount": 6,
+      "nriOciCount": 4,
+      "foreignNationalCount": 2
+    }
+  },
+  "students": {
+    "7841-9023-4412": {
+      "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "apaar_id": "7841-9023-4412",
+      "full_name": "Pritam Raj Chaurasiya",
+      "program": "B.Tech Computer Science & Engineering",
+      "semester": 3,
+      "sgpa": 8.4,
+      "cgpa": 8.4,
+      "abc_credits": 68,
+      "institute_pid": "PID-1-4920182",
+      "institute_name": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "status": "ACTIVE",
+      "date_of_birth": "2004-07-15",
+      "gender": "Male",
+      "email": "pritam@demo.student",
+      "semesters": [
+        {
+          "sem": 1,
+          "sgpa": 8.2,
+          "cgpa": 8.2,
+          "credits": 22,
+          "hash": "0x7a19c42e8b10f92a3d4e5f6a7b8c9d0e1f2a3b4c"
+        },
+        {
+          "sem": 2,
+          "sgpa": 8.6,
+          "cgpa": 8.35,
+          "credits": 24,
+          "hash": "0x3f88d19a4c77e2019b8a7c6d5e4f3a2b1c0d9e8f"
+        },
+        {
+          "sem": 3,
+          "sgpa": 8.4,
+          "cgpa": 8.4,
+          "credits": 22,
+          "hash": "0x8f92e41b7c2091a41c5d6e7f8a9b0c1d2e3f4a5b"
+        }
+      ],
+      "institutional_student_id": "LNCTE-CSE-2022-042"
+    },
+    "8832-5519-1029": {
+      "id": "d4e5f6a7-b8c9-0123-defa-234567890123",
+      "apaar_id": "8832-5519-1029",
+      "full_name": "Rohan Verma",
+      "program": "B.Tech Electronics & Communication",
+      "semester": 3,
+      "sgpa": 8.05,
+      "cgpa": 8.05,
+      "abc_credits": 65,
+      "institute_pid": "PID-1-3310",
+      "institute_name": "Institute of Engineering & Science - Tenant B",
+      "status": "ACTIVE",
+      "date_of_birth": "2004-03-22",
+      "gender": "Male",
+      "email": "rohan@demo.student",
+      "semesters": []
+    },
+    "5501-3378-2290": {
+      "id": "e5f6a7b8-c9d0-1234-efab-345678901234",
+      "apaar_id": "5501-3378-2290",
+      "full_name": "Ananya Sharma",
+      "program": "B.Tech Computer Science & Engineering",
+      "semester": 5,
+      "sgpa": 9.1,
+      "cgpa": 9.1,
+      "abc_credits": 112,
+      "institute_pid": "PID-1-4920182",
+      "institute_name": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "status": "ACTIVE",
+      "date_of_birth": "2003-11-08",
+      "gender": "Female",
+      "email": "ananya@demo.student",
+      "semesters": []
+    },
+    "6623-4481-7756": {
+      "id": "f6a7b8c9-d0e1-2345-fabc-456789012345",
+      "apaar_id": "6623-4481-7756",
+      "full_name": "Vikram Singh",
+      "program": "B.Tech Computer Science & Engineering",
+      "semester": 7,
+      "sgpa": 7.85,
+      "cgpa": 7.85,
+      "abc_credits": 156,
+      "institute_pid": "PID-1-4920182",
+      "institute_name": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "status": "GRADUATED",
+      "date_of_birth": "2002-01-30",
+      "gender": "Male",
+      "email": "vikram@demo.student",
+      "semesters": []
+    },
+    "9988-7766-5544": {
+      "id": "ad59ddcd-b9a2-4491-8f3e-19719f4be171",
+      "apaar_id": "9988-7766-5544",
+      "full_name": "Tanvi Patel",
+      "program": "B.Tech - Computer Science",
+      "semester": 3,
+      "sgpa": 8.92,
+      "cgpa": 8.92,
+      "abc_credits": 64,
+      "institute_pid": "PID-1-4920182",
+      "institute_name": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "status": "ACTIVE",
+      "email": "998877665544@student.ac.in",
+      "semesters": [
+        {
+          "sem": 3,
+          "sgpa": 8.92,
+          "cgpa": 8.92,
+          "credits": 64,
+          "hash": "0x2e912abc2cdef760de123087a363a5f51f2a9d14254646fc129ff4f780b8a2df",
+          "issuedAt": "2026-10-27T20:36:39.836Z"
+        }
+      ]
+    },
+    "1124-5685-4566": {
+      "id": "ac054f85-cce7-45fc-a1f4-50ff3be3b133",
+      "apaar_id": "1124-5685-4566",
+      "full_name": "saakaka",
+      "program": "B.Tech - Computer Science & Engineering",
+      "semester": 1,
+      "sgpa": 8.5,
+      "cgpa": 8.5,
+      "abc_credits": 22,
+      "institute_pid": "PID-1-4920182",
+      "institute_name": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "status": "ACTIVE",
+      "email": "112456854566@student.ac.in",
+      "semesters": [
+        {
+          "sem": 1,
+          "sgpa": 8.5,
+          "cgpa": 8.5,
+          "credits": 22,
+          "hash": "0x9faf377760d8f36d2d28117c3cfe3a7a8bd21c759b75831d9a06d15b6630bc19",
+          "issuedAt": "2026-10-28T13:11:51.559Z"
+        }
+      ]
+    },
+    "4745-6225-6333": {
+      "id": "fe0f17a2-37db-4c86-b2be-1a12650f5aea",
+      "apaar_id": "4745-6225-6333",
+      "institutional_student_id": "LNCTE-CSE-2024-499",
+      "is_supernumerary": true,
+      "is_nri": true,
+      "is_oci": false,
+      "is_foreign_national": false,
+      "full_name": "ddggh",
+      "program": "B.Tech - Computer Science & Engineering",
+      "semester": 1,
+      "sgpa": 8.5,
+      "cgpa": 8.5,
+      "abc_credits": 22,
+      "institute_pid": "514456",
+      "institute_name": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "status": "ACTIVE",
+      "email": "474562256333@student.ac.in",
+      "semesters": [
+        {
+          "sem": 1,
+          "sgpa": 8.5,
+          "cgpa": 8.5,
+          "credits": 22,
+          "hash": "0x5e2e01147b1b61d88bec02c258ece5431592db9e2f37b608b54d2e7089466702",
+          "issuedAt": "2026-10-28T16:07:44.028Z"
+        }
+      ]
+    }
+  },
+  "consents": [
+    {
+      "consent_id": "CONSENT-2026-991",
+      "target_apaar_id": "7841-9023-4412",
+      "student_name": "Pritam Raj Chaurasiya",
+      "requester_name": "Talent Acquisition & Verification Team",
+      "requester_org": "Infosys Campus Hiring BGV Portal (ORG-INFOSYS-BGV)",
+      "requester_email": "bgv@infosys.demo",
+      "purpose": "Background Verification for Campus Placement",
+      "data_scope": "B.Tech CSE Sem 1-3 Verified Transcript & CGPA",
+      "zero_knowledge_mode": true,
+      "status": "APPROVED",
+      "expires_at": "2026-10-28T05:30:00.000Z",
+      "granted_at": "2026-10-28T02:51:34.844Z",
+      "revoked_at": null
+    }
+  ],
+  "blocked_frauds": [
+    {
+      "id": "blk-001",
+      "apaarId": "8832-5519-1029",
+      "studentName": "Rohan Verma",
+      "existingActivePid": "PID-1-3310",
+      "existingInstituteName": "Institute of Engineering & Science - Tenant B",
+      "attemptedPid": "PID-1-4920182",
+      "attemptedInstituteName": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "program": "B.Tech Electronics & Communication",
+      "timestamp": "2026-10-27T06:15:30.000Z",
+      "reason": "ERR_APAAR_DUAL_ENROLLMENT: Concurrent full-time admission blocked",
+      "httpStatus": 409
+    }
+  ],
+  "audit_logs": [
+    {
+      "id": "1",
+      "timestamp": "2026-10-27T06:00:00.000Z",
+      "eventType": "SYSTEM_INIT",
+      "httpStatus": 200,
+      "actorEmail": "system",
+      "actorRole": "ROLE_COUNCIL_ADMIN",
+      "institutePid": "NATIONAL_ALL",
+      "payload": {
+        "message": "APAAR-Setu platform initialized",
+        "version": "2.0.0"
+      },
+      "prevHash": null,
+      "currentHash": "0x7a19c42e8b10f92a3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c"
+    },
+    {
+      "id": "2",
+      "timestamp": "2026-10-27T20:35:45.515Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": false,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0x7a19c42e8b10f92a3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c",
+      "currentHash": "0x5bce56c53b1d4cb1609b263af6b8f8a3d8a175a6bbe5eb23f70d5d6594d4b52f"
+    },
+    {
+      "id": "3",
+      "timestamp": "2026-10-27T20:35:45.579Z",
+      "eventType": "BATCH_SYNC_OK",
+      "httpStatus": 200,
+      "actorEmail": "admin@aicte.demo",
+      "actorRole": "ROLE_COUNCIL_ADMIN",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "totalSynced": 119,
+        "institutePid": "PID-1-4920182",
+        "fastApiHash": "0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779"
+      },
+      "details": "{\"totalSynced\":119,\"institutePid\":\"PID-1-4920182\",\"fastApiHash\":\"0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779\"}",
+      "prevHash": "0x5bce56c53b1d4cb1609b263af6b8f8a3d8a175a6bbe5eb23f70d5d6594d4b52f",
+      "currentHash": "0xa2ccad311af4b8229ff0e92a31fca55ba84b330137341b962ff3d3b836b34ad5"
+    },
+    {
+      "id": "4",
+      "timestamp": "2026-10-27T20:35:45.580Z",
+      "eventType": "DUAL_ENROLLMENT_BLOCKED",
+      "httpStatus": 409,
+      "actorEmail": "admin@aicte.demo",
+      "actorRole": "ROLE_COUNCIL_ADMIN",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "apaarId": "8832-5519-1029",
+        "studentName": "Rohan Verma",
+        "existingInstitute": "PID-1-3310",
+        "attemptedInstitute": "PID-1-4920182"
+      },
+      "details": "{\"apaarId\":\"8832-5519-1029\",\"studentName\":\"Rohan Verma\",\"existingInstitute\":\"PID-1-3310\",\"attemptedInstitute\":\"PID-1-4920182\"}",
+      "prevHash": "0xa2ccad311af4b8229ff0e92a31fca55ba84b330137341b962ff3d3b836b34ad5",
+      "currentHash": "0x90a97f249f6b1507ceb65dda9bd4f193a7f8df2da3ca8127afff970f5c6568f9"
+    },
+    {
+      "id": "5",
+      "timestamp": "2026-10-27T20:36:39.839Z",
+      "eventType": "STUDENT_ONBOARDED",
+      "httpStatus": 201,
+      "actorEmail": "admin@aicte.demo",
+      "actorRole": "ROLE_COUNCIL_ADMIN",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "apaarId": "9988-7766-5544",
+        "studentName": "Tanvi Patel",
+        "institutePid": "PID-1-4920182",
+        "merkleHash": "0x2e912abc2cdef760de123087a363a5f51f2a9d14254646fc129ff4f780b8a2df",
+        "message": "Onboarded student Tanvi Patel (9988-7766-5544) and anchored Merkle proof."
+      },
+      "details": "Onboarded student Tanvi Patel (9988-7766-5544) and anchored Merkle proof.",
+      "prevHash": "0x90a97f249f6b1507ceb65dda9bd4f193a7f8df2da3ca8127afff970f5c6568f9",
+      "currentHash": "0x7817219b7abfc959e6350d866c249dc7e4c0806ed3f5ff5635f4a52e1ae3f2ef"
+    },
+    {
+      "id": "6",
+      "timestamp": "2026-10-28T02:50:29.885Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "consentId": "CONSENT-2026-991",
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'CONSENT-2026-991' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'CONSENT-2026-991' to status 'APPROVED'.",
+      "prevHash": "0x7817219b7abfc959e6350d866c249dc7e4c0806ed3f5ff5635f4a52e1ae3f2ef",
+      "currentHash": "0x373172d684612386e53c508a31b102e861c955f9d05a728fd9f7f876d33f78ac"
+    },
+    {
+      "id": "7",
+      "timestamp": "2026-10-28T02:50:34.700Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0x373172d684612386e53c508a31b102e861c955f9d05a728fd9f7f876d33f78ac",
+      "currentHash": "0xac10c7c40826d1a004636daf61ce893562f66723e5add5b00343311012c45e76"
+    },
+    {
+      "id": "8",
+      "timestamp": "2026-10-28T02:50:35.827Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0xac10c7c40826d1a004636daf61ce893562f66723e5add5b00343311012c45e76",
+      "currentHash": "0x94ed4f3651a3b96830f8d8c3392c614346fe6656ef80c7c2b90cef9b1725f42e"
+    },
+    {
+      "id": "9",
+      "timestamp": "2026-10-28T02:51:30.029Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0x94ed4f3651a3b96830f8d8c3392c614346fe6656ef80c7c2b90cef9b1725f42e",
+      "currentHash": "0x28fe111653e6fff960167d920a53dd4435cda3f87be0fbb12c799e7ccdc66518"
+    },
+    {
+      "id": "10",
+      "timestamp": "2026-10-28T02:51:32.248Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0x28fe111653e6fff960167d920a53dd4435cda3f87be0fbb12c799e7ccdc66518",
+      "currentHash": "0x8dbc1664062cf82e3dca0574c3a73db545f6692d6fea58f74c3da0e7e61e0784"
+    },
+    {
+      "id": "11",
+      "timestamp": "2026-10-28T02:51:33.279Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0x8dbc1664062cf82e3dca0574c3a73db545f6692d6fea58f74c3da0e7e61e0784",
+      "currentHash": "0x37609c79986d9570209157000448ce946a7462f45b8a97083f9e7e3cee3637d1"
+    },
+    {
+      "id": "12",
+      "timestamp": "2026-10-28T02:51:33.521Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0x37609c79986d9570209157000448ce946a7462f45b8a97083f9e7e3cee3637d1",
+      "currentHash": "0x114a756d5b474078a2f8aadee406231c300686102b9eaa836c00f59e4267ec94"
+    },
+    {
+      "id": "13",
+      "timestamp": "2026-10-28T02:51:33.672Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0x114a756d5b474078a2f8aadee406231c300686102b9eaa836c00f59e4267ec94",
+      "currentHash": "0x8d53c02e1c003cadc35c99c582a5883ea7089414e7e3a18c55001687453bd161"
+    },
+    {
+      "id": "14",
+      "timestamp": "2026-10-28T02:51:33.867Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0x8d53c02e1c003cadc35c99c582a5883ea7089414e7e3a18c55001687453bd161",
+      "currentHash": "0x896d6d024c94b41afe1172e1185946b1bba31678bdf024baa24636db4014eb39"
+    },
+    {
+      "id": "15",
+      "timestamp": "2026-10-28T02:51:34.029Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0x896d6d024c94b41afe1172e1185946b1bba31678bdf024baa24636db4014eb39",
+      "currentHash": "0x930fc1f9bfe73054d64d07876e0464a775ff9d71404da44fedd4d231a5ffcefe"
+    },
+    {
+      "id": "16",
+      "timestamp": "2026-10-28T02:51:34.190Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0x930fc1f9bfe73054d64d07876e0464a775ff9d71404da44fedd4d231a5ffcefe",
+      "currentHash": "0x2d35ce8beb1f8d314587eefb6533034d94811dcf5cb8ded3cec9512cb323480c"
+    },
+    {
+      "id": "17",
+      "timestamp": "2026-10-28T02:51:34.339Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0x2d35ce8beb1f8d314587eefb6533034d94811dcf5cb8ded3cec9512cb323480c",
+      "currentHash": "0xfc1ce34738536900135357c8b0b41bebd82a016b88ae4b8dcf581b551df3c220"
+    },
+    {
+      "id": "18",
+      "timestamp": "2026-10-28T02:51:34.475Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0xfc1ce34738536900135357c8b0b41bebd82a016b88ae4b8dcf581b551df3c220",
+      "currentHash": "0x4f40d210ab462dc213298a588a6933cf684e19feaa1944abff2f075beaca1af9"
+    },
+    {
+      "id": "19",
+      "timestamp": "2026-10-28T02:51:34.617Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0x4f40d210ab462dc213298a588a6933cf684e19feaa1944abff2f075beaca1af9",
+      "currentHash": "0xa40a3409a439a223bbd8dbbe6e9cb07e7825b66c6a0113d99c6c6c13588e9bb0"
+    },
+    {
+      "id": "20",
+      "timestamp": "2026-10-28T02:51:34.846Z",
+      "eventType": "DPDP_CONSENT_GRANTED",
+      "httpStatus": 200,
+      "actorEmail": "pritam@demo.student",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "status": "APPROVED",
+        "zeroKnowledgeMode": true,
+        "message": "Student updated consent 'undefined' to status 'APPROVED'."
+      },
+      "details": "Student updated consent 'undefined' to status 'APPROVED'.",
+      "prevHash": "0xa40a3409a439a223bbd8dbbe6e9cb07e7825b66c6a0113d99c6c6c13588e9bb0",
+      "currentHash": "0xa01998ae56feb6f322779722a6b8c8ab544250e251dcafa426c4ff16618d805a"
+    },
+    {
+      "id": "21",
+      "timestamp": "2026-10-28T00:23:49.311Z",
+      "eventType": "OAUTH_AUTHORIZE_CHALLENGE",
+      "httpStatus": 200,
+      "actorEmail": "784190234412@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "authCode": "auth_8424c2cee40509c85045c9716bd4569e",
+        "identifier": "7841-9023-4412",
+        "role": "ROLE_STUDENT",
+        "scopes": [
+          "openid",
+          "profile",
+          "apaar.read",
+          "abc.credits.verify",
+          "consent.write"
+        ],
+        "challengeType": "SMS_OTP_EKYC",
+        "message": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7841-9023-4412)"
+      },
+      "details": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7841-9023-4412)",
+      "prevHash": "0xa01998ae56feb6f322779722a6b8c8ab544250e251dcafa426c4ff16618d805a",
+      "currentHash": "0xe2444b69059b12e250b04419d1046ed1470eaeba1595873eab0a533f8c60c7f8"
+    },
+    {
+      "id": "22",
+      "timestamp": "2026-10-28T12:40:18.819Z",
+      "eventType": "OAUTH_AUTHORIZE_CHALLENGE",
+      "httpStatus": 200,
+      "actorEmail": "784190234412@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "authCode": "auth_aae473939e57ae494d80e488fc89611c",
+        "identifier": "7841-9023-4412",
+        "role": "ROLE_STUDENT",
+        "scopes": [
+          "openid",
+          "profile",
+          "apaar.read",
+          "abc.credits.verify",
+          "consent.write"
+        ],
+        "challengeType": "SMS_OTP_EKYC",
+        "message": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7841-9023-4412)"
+      },
+      "details": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7841-9023-4412)",
+      "prevHash": "0xe2444b69059b12e250b04419d1046ed1470eaeba1595873eab0a533f8c60c7f8",
+      "currentHash": "0xe64dbc825d3bf5544e6975ac73d1e7a7963f0ec913b8c49ad8988dc4928676c3"
+    },
+    {
+      "id": "23",
+      "timestamp": "2026-10-28T12:40:18.857Z",
+      "eventType": "OAUTH_TOKEN_ISSUED",
+      "httpStatus": 200,
+      "actorEmail": "784190234412@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "sub": "7841-9023-4412",
+        "role": "ROLE_STUDENT",
+        "scope": "openid profile apaar.read abc.credits.verify consent.write",
+        "provider": "National Academic Depository / API Setu OAuth 2.0",
+        "message": "Signed JWT session issued for Pritam Raj Chaurasiya via National Academic Depository / API Setu OAuth 2.0"
+      },
+      "details": "Signed JWT session issued for Pritam Raj Chaurasiya via National Academic Depository / API Setu OAuth 2.0",
+      "prevHash": "0xe64dbc825d3bf5544e6975ac73d1e7a7963f0ec913b8c49ad8988dc4928676c3",
+      "currentHash": "0xce4d2da53da164c5271bc3f27cf85ad94feed37d7758d31d2b211f7384de0fbb"
+    },
+    {
+      "id": "24",
+      "timestamp": "2026-10-28T12:42:37.888Z",
+      "eventType": "OAUTH_AUTHORIZE_CHALLENGE",
+      "httpStatus": 200,
+      "actorEmail": "784190234412@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "authCode": "auth_60d07c96b77cb2a5571d161bffea0e2a",
+        "identifier": "7841-9023-4412",
+        "role": "ROLE_STUDENT",
+        "scopes": [
+          "openid",
+          "profile",
+          "apaar.read",
+          "abc.credits.verify",
+          "consent.write"
+        ],
+        "challengeType": "SMS_OTP_EKYC",
+        "message": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7841-9023-4412)"
+      },
+      "details": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7841-9023-4412)",
+      "prevHash": "0xce4d2da53da164c5271bc3f27cf85ad94feed37d7758d31d2b211f7384de0fbb",
+      "currentHash": "0x42b5fd2680c0d748d18ad13a2e45869f8066d564632821eb37ce87168cde01c8"
+    },
+    {
+      "id": "25",
+      "timestamp": "2026-10-28T12:42:37.896Z",
+      "eventType": "OAUTH_TOKEN_ISSUED",
+      "httpStatus": 200,
+      "actorEmail": "784190234412@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "sub": "7841-9023-4412",
+        "role": "ROLE_STUDENT",
+        "scope": "openid profile apaar.read abc.credits.verify consent.write",
+        "provider": "National Academic Depository / API Setu OAuth 2.0",
+        "message": "Signed JWT session issued for Pritam Raj Chaurasiya via National Academic Depository / API Setu OAuth 2.0"
+      },
+      "details": "Signed JWT session issued for Pritam Raj Chaurasiya via National Academic Depository / API Setu OAuth 2.0",
+      "prevHash": "0x42b5fd2680c0d748d18ad13a2e45869f8066d564632821eb37ce87168cde01c8",
+      "currentHash": "0x6aec67aad42d65f752c6cdd46a5eacbe5f1bc1755253eec55f9a457aee92487e"
+    },
+    {
+      "id": "26",
+      "timestamp": "2026-10-28T12:42:37.923Z",
+      "eventType": "RBAC_UNAUTHORIZED",
+      "httpStatus": 403,
+      "actorEmail": "784190234412@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "required": [
+          "ROLE_INST_NODAL",
+          "ROLE_COUNCIL_ADMIN"
+        ],
+        "provided": "ROLE_STUDENT"
+      },
+      "details": "{\"required\":[\"ROLE_INST_NODAL\",\"ROLE_COUNCIL_ADMIN\"],\"provided\":\"ROLE_STUDENT\"}",
+      "prevHash": "0x6aec67aad42d65f752c6cdd46a5eacbe5f1bc1755253eec55f9a457aee92487e",
+      "currentHash": "0x47f8a96138d4ac31a928af167aa947cd34502bcee3b9a64299cf350a6d597893"
+    },
+    {
+      "id": "27",
+      "timestamp": "2026-10-28T12:44:50.139Z",
+      "eventType": "OAUTH_AUTHORIZE_CHALLENGE",
+      "httpStatus": 200,
+      "actorEmail": "pid14920182@apaar-setu.gov.in",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "authCode": "auth_8b82c1c86635b6effb5c0eafbff3a30c",
+        "identifier": "PID-1-4920182",
+        "role": "ROLE_INST_NODAL",
+        "scopes": [
+          "openid",
+          "erp.sync",
+          "student.write",
+          "rls.tenant.PID-1-4920182"
+        ],
+        "challengeType": "SMS_OTP_EKYC",
+        "message": "Dispatched e-KYC challenge for LNCT Excellence Nodal Officer (PID-1-4920182)"
+      },
+      "details": "Dispatched e-KYC challenge for LNCT Excellence Nodal Officer (PID-1-4920182)",
+      "prevHash": "0x47f8a96138d4ac31a928af167aa947cd34502bcee3b9a64299cf350a6d597893",
+      "currentHash": "0x5beb8b6923771ca3efd91972ef0cfd1747d6e32d6a4d1c2e43870d034c1a9682"
+    },
+    {
+      "id": "28",
+      "timestamp": "2026-10-28T12:44:50.157Z",
+      "eventType": "OAUTH_TOKEN_ISSUED",
+      "httpStatus": 200,
+      "actorEmail": "pid14920182@apaar-setu.gov.in",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "sub": "PID-1-4920182",
+        "role": "ROLE_INST_NODAL",
+        "scope": "openid erp.sync student.write rls.tenant.PID-1-4920182",
+        "provider": "Institutional ERP SSO / SAML 2.0 Gateway",
+        "message": "Signed JWT session issued for LNCT Excellence Nodal Officer via Institutional ERP SSO / SAML 2.0 Gateway"
+      },
+      "details": "Signed JWT session issued for LNCT Excellence Nodal Officer via Institutional ERP SSO / SAML 2.0 Gateway",
+      "prevHash": "0x5beb8b6923771ca3efd91972ef0cfd1747d6e32d6a4d1c2e43870d034c1a9682",
+      "currentHash": "0xe55c77385b904dd5d6af44438fab17ffce8e254f9542df2bfd162b6595ad0af6"
+    },
+    {
+      "id": "29",
+      "timestamp": "2026-10-28T12:44:50.224Z",
+      "eventType": "BATCH_SYNC_OK",
+      "httpStatus": 200,
+      "actorEmail": "pid14920182@apaar-setu.gov.in",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "totalSynced": 119,
+        "institutePid": "PID-1-4920182",
+        "fastApiHash": "0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779"
+      },
+      "details": "{\"totalSynced\":119,\"institutePid\":\"PID-1-4920182\",\"fastApiHash\":\"0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779\"}",
+      "prevHash": "0xe55c77385b904dd5d6af44438fab17ffce8e254f9542df2bfd162b6595ad0af6",
+      "currentHash": "0xb15f2212ca7b865fbf5f8ca6e17a0140fce451baecb428c809c9e94e7f76bea0"
+    },
+    {
+      "id": "30",
+      "timestamp": "2026-10-28T12:44:50.225Z",
+      "eventType": "DUAL_ENROLLMENT_BLOCKED",
+      "httpStatus": 409,
+      "actorEmail": "pid14920182@apaar-setu.gov.in",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "apaarId": "8832-5519-1029",
+        "studentName": "Rohan Verma",
+        "existingInstitute": "PID-1-3310",
+        "attemptedInstitute": "PID-1-4920182"
+      },
+      "details": "{\"apaarId\":\"8832-5519-1029\",\"studentName\":\"Rohan Verma\",\"existingInstitute\":\"PID-1-3310\",\"attemptedInstitute\":\"PID-1-4920182\"}",
+      "prevHash": "0xb15f2212ca7b865fbf5f8ca6e17a0140fce451baecb428c809c9e94e7f76bea0",
+      "currentHash": "0xe1ec2a58555b7662bca2b37e7ba87755c189e078e75924b7cf4a31ee3e9a32c4"
+    },
+    {
+      "id": "31",
+      "timestamp": "2026-10-28T13:11:13.902Z",
+      "eventType": "OAUTH_AUTHORIZE_CHALLENGE",
+      "httpStatus": 200,
+      "actorEmail": "pid14920182@apaar-setu.gov.in",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "authCode": "auth_87e3d82d0b8267f6be40b207c16b56f4",
+        "identifier": "PID-1-4920182",
+        "role": "ROLE_INST_NODAL",
+        "scopes": [
+          "openid",
+          "erp.sync",
+          "student.write",
+          "rls.tenant.PID-1-4920182"
+        ],
+        "challengeType": "SMS_OTP_EKYC",
+        "message": "Dispatched e-KYC challenge for LNCT Excellence Nodal Officer (PID-1-4920182)"
+      },
+      "details": "Dispatched e-KYC challenge for LNCT Excellence Nodal Officer (PID-1-4920182)",
+      "prevHash": "0xe1ec2a58555b7662bca2b37e7ba87755c189e078e75924b7cf4a31ee3e9a32c4",
+      "currentHash": "0xad21a8a63be7f866102d051db49c6cdb8c78b450b6a5f8344bb82570ccf2fd39"
+    },
+    {
+      "id": "32",
+      "timestamp": "2026-10-28T13:11:16.453Z",
+      "eventType": "OAUTH_TOKEN_ISSUED",
+      "httpStatus": 200,
+      "actorEmail": "pid14920182@apaar-setu.gov.in",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "sub": "PID-1-4920182",
+        "role": "ROLE_INST_NODAL",
+        "scope": "openid erp.sync student.write rls.tenant.PID-1-4920182",
+        "provider": "Institutional ERP SSO / SAML 2.0 Gateway",
+        "message": "Signed JWT session issued for LNCT Excellence Nodal Officer via Institutional ERP SSO / SAML 2.0 Gateway"
+      },
+      "details": "Signed JWT session issued for LNCT Excellence Nodal Officer via Institutional ERP SSO / SAML 2.0 Gateway",
+      "prevHash": "0xad21a8a63be7f866102d051db49c6cdb8c78b450b6a5f8344bb82570ccf2fd39",
+      "currentHash": "0x390454d7edca446dbdc1f82cf8e4c4c175231923dc244273ddf62cb14027b3c5"
+    },
+    {
+      "id": "33",
+      "timestamp": "2026-10-28T13:11:39.157Z",
+      "eventType": "BATCH_SYNC_OK",
+      "httpStatus": 200,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "totalSynced": 119,
+        "institutePid": "PID-1-4920182",
+        "fastApiHash": "0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779"
+      },
+      "details": "{\"totalSynced\":119,\"institutePid\":\"PID-1-4920182\",\"fastApiHash\":\"0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779\"}",
+      "prevHash": "0x390454d7edca446dbdc1f82cf8e4c4c175231923dc244273ddf62cb14027b3c5",
+      "currentHash": "0x0eccc333af8b52fb84dbad939f96c56dbe7dee4bc692225d1279b52125d69b8e"
+    },
+    {
+      "id": "34",
+      "timestamp": "2026-10-28T13:11:39.159Z",
+      "eventType": "DUAL_ENROLLMENT_BLOCKED",
+      "httpStatus": 409,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "apaarId": "8832-5519-1029",
+        "studentName": "Rohan Verma",
+        "existingInstitute": "PID-1-3310",
+        "attemptedInstitute": "PID-1-4920182"
+      },
+      "details": "{\"apaarId\":\"8832-5519-1029\",\"studentName\":\"Rohan Verma\",\"existingInstitute\":\"PID-1-3310\",\"attemptedInstitute\":\"PID-1-4920182\"}",
+      "prevHash": "0x0eccc333af8b52fb84dbad939f96c56dbe7dee4bc692225d1279b52125d69b8e",
+      "currentHash": "0x36ca10d9372672756dcc1491cfd01077698cab6e8c48ebbaa57b7f3248e75bd0"
+    },
+    {
+      "id": "35",
+      "timestamp": "2026-10-28T13:11:40.938Z",
+      "eventType": "BATCH_SYNC_OK",
+      "httpStatus": 200,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "totalSynced": 119,
+        "institutePid": "PID-1-4920182",
+        "fastApiHash": "0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779"
+      },
+      "details": "{\"totalSynced\":119,\"institutePid\":\"PID-1-4920182\",\"fastApiHash\":\"0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779\"}",
+      "prevHash": "0x36ca10d9372672756dcc1491cfd01077698cab6e8c48ebbaa57b7f3248e75bd0",
+      "currentHash": "0xd97b65a73b8c4e2f181defc9d0e97c87e39593882464cdd77fc114ba3e26748f"
+    },
+    {
+      "id": "36",
+      "timestamp": "2026-10-28T13:11:40.940Z",
+      "eventType": "DUAL_ENROLLMENT_BLOCKED",
+      "httpStatus": 409,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "apaarId": "8832-5519-1029",
+        "studentName": "Rohan Verma",
+        "existingInstitute": "PID-1-3310",
+        "attemptedInstitute": "PID-1-4920182"
+      },
+      "details": "{\"apaarId\":\"8832-5519-1029\",\"studentName\":\"Rohan Verma\",\"existingInstitute\":\"PID-1-3310\",\"attemptedInstitute\":\"PID-1-4920182\"}",
+      "prevHash": "0xd97b65a73b8c4e2f181defc9d0e97c87e39593882464cdd77fc114ba3e26748f",
+      "currentHash": "0x521e449629f29bcf051f1f04682e982b3e776991997b97c0e00cb98f08d5649e"
+    },
+    {
+      "id": "37",
+      "timestamp": "2026-10-28T13:11:51.560Z",
+      "eventType": "STUDENT_ONBOARDED",
+      "httpStatus": 201,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "apaarId": "1124-5685-4566",
+        "studentName": "saakaka",
+        "institutePid": "PID-1-4920182",
+        "merkleHash": "0x9faf377760d8f36d2d28117c3cfe3a7a8bd21c759b75831d9a06d15b6630bc19",
+        "message": "Onboarded student saakaka (1124-5685-4566) and anchored Merkle proof."
+      },
+      "details": "Onboarded student saakaka (1124-5685-4566) and anchored Merkle proof.",
+      "prevHash": "0x521e449629f29bcf051f1f04682e982b3e776991997b97c0e00cb98f08d5649e",
+      "currentHash": "0x74896ff660f2ad7d6ab8c57df84783e6a043223ca5ac8a58178eefbe047da133"
+    },
+    {
+      "id": "38",
+      "timestamp": "2026-10-28T13:11:56.686Z",
+      "eventType": "BATCH_SYNC_OK",
+      "httpStatus": 200,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "totalSynced": 119,
+        "institutePid": "PID-1-4920182",
+        "fastApiHash": "0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779"
+      },
+      "details": "{\"totalSynced\":119,\"institutePid\":\"PID-1-4920182\",\"fastApiHash\":\"0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779\"}",
+      "prevHash": "0x74896ff660f2ad7d6ab8c57df84783e6a043223ca5ac8a58178eefbe047da133",
+      "currentHash": "0xf63231fbf5171b3c26dfe6f5e71e136d43f8f5ffab8ad6b2a76bb6b6e85da435"
+    },
+    {
+      "id": "39",
+      "timestamp": "2026-10-28T13:11:56.688Z",
+      "eventType": "DUAL_ENROLLMENT_BLOCKED",
+      "httpStatus": 409,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "apaarId": "8832-5519-1029",
+        "studentName": "Rohan Verma",
+        "existingInstitute": "PID-1-3310",
+        "attemptedInstitute": "PID-1-4920182"
+      },
+      "details": "{\"apaarId\":\"8832-5519-1029\",\"studentName\":\"Rohan Verma\",\"existingInstitute\":\"PID-1-3310\",\"attemptedInstitute\":\"PID-1-4920182\"}",
+      "prevHash": "0xf63231fbf5171b3c26dfe6f5e71e136d43f8f5ffab8ad6b2a76bb6b6e85da435",
+      "currentHash": "0x5c28cc0b83a678a6209509b43f1443eae6dbd8ff3538def713ca9fbedcc9d381"
+    },
+    {
+      "id": "40",
+      "timestamp": "2026-10-28T13:11:57.678Z",
+      "eventType": "BATCH_SYNC_OK",
+      "httpStatus": 200,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "totalSynced": 119,
+        "institutePid": "PID-1-4920182",
+        "fastApiHash": "0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779"
+      },
+      "details": "{\"totalSynced\":119,\"institutePid\":\"PID-1-4920182\",\"fastApiHash\":\"0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779\"}",
+      "prevHash": "0x5c28cc0b83a678a6209509b43f1443eae6dbd8ff3538def713ca9fbedcc9d381",
+      "currentHash": "0xf48f0178266081bca83f8ca75f88b40948c223fc6d87ad48579704803473a2a4"
+    },
+    {
+      "id": "41",
+      "timestamp": "2026-10-28T13:11:57.680Z",
+      "eventType": "DUAL_ENROLLMENT_BLOCKED",
+      "httpStatus": 409,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "apaarId": "8832-5519-1029",
+        "studentName": "Rohan Verma",
+        "existingInstitute": "PID-1-3310",
+        "attemptedInstitute": "PID-1-4920182"
+      },
+      "details": "{\"apaarId\":\"8832-5519-1029\",\"studentName\":\"Rohan Verma\",\"existingInstitute\":\"PID-1-3310\",\"attemptedInstitute\":\"PID-1-4920182\"}",
+      "prevHash": "0xf48f0178266081bca83f8ca75f88b40948c223fc6d87ad48579704803473a2a4",
+      "currentHash": "0x99dd123b6dd93ce8cacf934c44db6ef6a5e04cae415f9bc501d4b0e2bb4a6c5c"
+    },
+    {
+      "id": "42",
+      "timestamp": "2026-10-28T13:11:58.511Z",
+      "eventType": "BATCH_SYNC_OK",
+      "httpStatus": 200,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "totalSynced": 119,
+        "institutePid": "PID-1-4920182",
+        "fastApiHash": "0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779"
+      },
+      "details": "{\"totalSynced\":119,\"institutePid\":\"PID-1-4920182\",\"fastApiHash\":\"0xe6e2423ef7916b0514befa1dcadecdef890e7018e613fb05fcdef171077b7779\"}",
+      "prevHash": "0x99dd123b6dd93ce8cacf934c44db6ef6a5e04cae415f9bc501d4b0e2bb4a6c5c",
+      "currentHash": "0x7e057c9a5e992edaf097b2470634db8d75b6aebb95321a1fa9874645eb68911a"
+    },
+    {
+      "id": "43",
+      "timestamp": "2026-10-28T13:11:58.512Z",
+      "eventType": "DUAL_ENROLLMENT_BLOCKED",
+      "httpStatus": 409,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "apaarId": "8832-5519-1029",
+        "studentName": "Rohan Verma",
+        "existingInstitute": "PID-1-3310",
+        "attemptedInstitute": "PID-1-4920182"
+      },
+      "details": "{\"apaarId\":\"8832-5519-1029\",\"studentName\":\"Rohan Verma\",\"existingInstitute\":\"PID-1-3310\",\"attemptedInstitute\":\"PID-1-4920182\"}",
+      "prevHash": "0x7e057c9a5e992edaf097b2470634db8d75b6aebb95321a1fa9874645eb68911a",
+      "currentHash": "0x98f0b4b4d6a686bb33f9daab4356f8e5a3d072300611f14f5db1c67c74e36d54"
+    },
+    {
+      "id": "44",
+      "timestamp": "2026-10-28T13:12:33.742Z",
+      "eventType": "OAUTH_AUTHORIZE_CHALLENGE",
+      "httpStatus": 200,
+      "actorEmail": "784190234412@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "authCode": "auth_1385bbd20dfd1495f389573241915719",
+        "identifier": "7841-9023-4412",
+        "role": "ROLE_STUDENT",
+        "scopes": [
+          "openid",
+          "profile",
+          "apaar.read",
+          "abc.credits.verify",
+          "consent.write"
+        ],
+        "challengeType": "SMS_OTP_EKYC",
+        "message": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7841-9023-4412)"
+      },
+      "details": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7841-9023-4412)",
+      "prevHash": "0x98f0b4b4d6a686bb33f9daab4356f8e5a3d072300611f14f5db1c67c74e36d54",
+      "currentHash": "0x01e0b8854d8477538d389784e56d57b5999d2363008432394f34b971a6e1add6"
+    },
+    {
+      "id": "45",
+      "timestamp": "2026-10-28T13:12:35.060Z",
+      "eventType": "OAUTH_TOKEN_ISSUED",
+      "httpStatus": 200,
+      "actorEmail": "784190234412@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "sub": "7841-9023-4412",
+        "role": "ROLE_STUDENT",
+        "scope": "openid profile apaar.read abc.credits.verify consent.write",
+        "provider": "National Academic Depository / API Setu OAuth 2.0",
+        "message": "Signed JWT session issued for Pritam Raj Chaurasiya via National Academic Depository / API Setu OAuth 2.0"
+      },
+      "details": "Signed JWT session issued for Pritam Raj Chaurasiya via National Academic Depository / API Setu OAuth 2.0",
+      "prevHash": "0x01e0b8854d8477538d389784e56d57b5999d2363008432394f34b971a6e1add6",
+      "currentHash": "0x8e1e5770a5e3425e4fb4a63e029a06e61a650944fd442a98458202a801d56945"
+    },
+    {
+      "id": "46",
+      "timestamp": "2026-10-28T14:58:31.772Z",
+      "eventType": "ANOMALY_INTAKE_LIMIT_EXCEEDED",
+      "httpStatus": 422,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "id": "anom-1793199511770",
+        "timestamp": "2026-10-28T14:58:31.770Z",
+        "severity": "CRITICAL",
+        "anomalyType": "INTAKE_OVERFLOW",
+        "institutePid": "PID-1-4920182",
+        "instituteName": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+        "title": "AICTE Approved Intake Exceeded",
+        "details": "Admission of 59st student exceeds AICTE Approved Intake of 60.",
+        "actionTaken": "HTTP 422 Unprocessable • Admission halted and flagged in national audit"
+      },
+      "details": "{\"id\":\"anom-1793199511770\",\"timestamp\":\"2026-10-28T14:58:31.770Z\",\"severity\":\"CRITICAL\",\"anomalyType\":\"INTAKE_OVERFLOW\",\"institutePid\":\"PID-1-4920182\",\"instituteName\":\"Lakshmi Narain College of Technology Excellence - Demo Tenant\",\"title\":\"AICTE Approved Intake Exceeded\",\"details\":\"Admission of 59st student exceeds AICTE Approved Intake of 60.\",\"actionTaken\":\"HTTP 422 Unprocessable • Admission halted and flagged in national audit\"}",
+      "prevHash": "0x8e1e5770a5e3425e4fb4a63e029a06e61a650944fd442a98458202a801d56945",
+      "currentHash": "0x629a8e34b1d4d206f704590e73d42f45c065de7c535c6b0a765807657df7e7f7"
+    },
+    {
+      "id": "47",
+      "timestamp": "2026-10-28T14:58:31.801Z",
+      "eventType": "ANOMALY_INVALID_APAAR",
+      "httpStatus": 400,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "id": "anom-1793199511799",
+        "timestamp": "2026-10-28T14:58:31.799Z",
+        "severity": "WARNING",
+        "anomalyType": "INVALID_APAAR",
+        "institutePid": "PID-1-4920182",
+        "instituteName": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+        "title": "Malformed APAAR Format Rejected",
+        "details": "Attempted onboarding with invalid APAAR 'INVALID-ID'. Expected 12 digits (XXXX-XXXX-XXXX).",
+        "actionTaken": "HTTP 400 Bad Request • Record rejected at schema barrier"
+      },
+      "details": "{\"id\":\"anom-1793199511799\",\"timestamp\":\"2026-10-28T14:58:31.799Z\",\"severity\":\"WARNING\",\"anomalyType\":\"INVALID_APAAR\",\"institutePid\":\"PID-1-4920182\",\"instituteName\":\"Lakshmi Narain College of Technology Excellence - Demo Tenant\",\"title\":\"Malformed APAAR Format Rejected\",\"details\":\"Attempted onboarding with invalid APAAR 'INVALID-ID'. Expected 12 digits (XXXX-XXXX-XXXX).\",\"actionTaken\":\"HTTP 400 Bad Request • Record rejected at schema barrier\"}",
+      "prevHash": "0x629a8e34b1d4d206f704590e73d42f45c065de7c535c6b0a765807657df7e7f7",
+      "currentHash": "0xdf11445b631616bf1ccdfc06b71a282872930eaba8cc1112ccdcd15cc2fcbc62"
+    },
+    {
+      "id": "48",
+      "timestamp": "2026-10-28T14:58:31.813Z",
+      "eventType": "ANOMALY_DUPLICATE_INSTITUTION_ID",
+      "httpStatus": 409,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "id": "anom-1793199511811",
+        "timestamp": "2026-10-28T14:58:31.811Z",
+        "severity": "HIGH",
+        "anomalyType": "DUPLICATE_INSTITUTION_ID",
+        "institutePid": "PID-1-4920182",
+        "instituteName": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+        "title": "Duplicate Institutional Student ID",
+        "details": "Roll ID 'LNCTE-CSE-2022-042' is already assigned to active student 'Pritam Raj Chaurasiya' (7841-9023-4412).",
+        "actionTaken": "HTTP 409 Conflict • Internal duplicate registration blocked"
+      },
+      "details": "{\"id\":\"anom-1793199511811\",\"timestamp\":\"2026-10-28T14:58:31.811Z\",\"severity\":\"HIGH\",\"anomalyType\":\"DUPLICATE_INSTITUTION_ID\",\"institutePid\":\"PID-1-4920182\",\"instituteName\":\"Lakshmi Narain College of Technology Excellence - Demo Tenant\",\"title\":\"Duplicate Institutional Student ID\",\"details\":\"Roll ID 'LNCTE-CSE-2022-042' is already assigned to active student 'Pritam Raj Chaurasiya' (7841-9023-4412).\",\"actionTaken\":\"HTTP 409 Conflict • Internal duplicate registration blocked\"}",
+      "prevHash": "0xdf11445b631616bf1ccdfc06b71a282872930eaba8cc1112ccdcd15cc2fcbc62",
+      "currentHash": "0x28a76314a848cda1f1baf8f8e8ff9b365b2957e472bd563cdbd877c6a5e05bac"
+    },
+    {
+      "id": "49",
+      "timestamp": "2026-10-28T15:05:02.980Z",
+      "eventType": "ANOMALY_INTAKE_LIMIT_EXCEEDED",
+      "httpStatus": 422,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "id": "anom-1793199902970",
+        "timestamp": "2026-10-28T15:05:02.970Z",
+        "severity": "CRITICAL",
+        "anomalyType": "INTAKE_OVERFLOW",
+        "institutePid": "PID-1-4920182",
+        "instituteName": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+        "title": "AICTE Approved Intake Exceeded",
+        "details": "Admission of 61st student exceeds AICTE Approved Intake of 60.",
+        "actionTaken": "HTTP 422 Unprocessable • Admission halted and flagged in national audit"
+      },
+      "details": "{\"id\":\"anom-1793199902970\",\"timestamp\":\"2026-10-28T15:05:02.970Z\",\"severity\":\"CRITICAL\",\"anomalyType\":\"INTAKE_OVERFLOW\",\"institutePid\":\"PID-1-4920182\",\"instituteName\":\"Lakshmi Narain College of Technology Excellence - Demo Tenant\",\"title\":\"AICTE Approved Intake Exceeded\",\"details\":\"Admission of 61st student exceeds AICTE Approved Intake of 60.\",\"actionTaken\":\"HTTP 422 Unprocessable • Admission halted and flagged in national audit\"}",
+      "prevHash": "0x28a76314a848cda1f1baf8f8e8ff9b365b2957e472bd563cdbd877c6a5e05bac",
+      "currentHash": "0x9a60221081d160e30fd73be0acaa59e7853862da3db55cd4a2a4ea6729dd881f"
+    },
+    {
+      "id": "50",
+      "timestamp": "2026-10-28T15:10:57.956Z",
+      "eventType": "OAUTH_AUTHORIZE_CHALLENGE",
+      "httpStatus": 200,
+      "actorEmail": "784190234412@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "authCode": "auth_011f202bb6f9bbf7387bee3724b25b40",
+        "identifier": "7841-9023-4412",
+        "role": "ROLE_STUDENT",
+        "scopes": [
+          "openid",
+          "profile",
+          "apaar.read",
+          "abc.credits.verify",
+          "consent.write"
+        ],
+        "challengeType": "SMS_OTP_EKYC",
+        "message": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7841-9023-4412)"
+      },
+      "details": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7841-9023-4412)",
+      "prevHash": "0x9a60221081d160e30fd73be0acaa59e7853862da3db55cd4a2a4ea6729dd881f",
+      "currentHash": "0x63591bb4d51e8063762b17d2d51f002aeafce1bd4c3aa0d1ee228f3ee240e031"
+    },
+    {
+      "id": "51",
+      "timestamp": "2026-10-28T16:04:01.797Z",
+      "eventType": "OAUTH_AUTHORIZE_CHALLENGE",
+      "httpStatus": 200,
+      "actorEmail": "784190234412@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "authCode": "auth_8c2e7b7b2d2aab2ed3cdcdddd69dbf29",
+        "identifier": "7841-9023-4412",
+        "role": "ROLE_STUDENT",
+        "scopes": [
+          "openid",
+          "profile",
+          "apaar.read",
+          "abc.credits.verify",
+          "consent.write"
+        ],
+        "challengeType": "SMS_OTP_EKYC",
+        "message": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7841-9023-4412)"
+      },
+      "details": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7841-9023-4412)",
+      "prevHash": "0x63591bb4d51e8063762b17d2d51f002aeafce1bd4c3aa0d1ee228f3ee240e031",
+      "currentHash": "0xf055323d89065ccfe8d72298b905b16d9937e3c0b73bf102248644dd3ce6befa"
+    },
+    {
+      "id": "52",
+      "timestamp": "2026-10-28T16:04:01.861Z",
+      "eventType": "OAUTH_TOKEN_ISSUED",
+      "httpStatus": 200,
+      "actorEmail": "784190234412@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "sub": "7841-9023-4412",
+        "role": "ROLE_STUDENT",
+        "scope": "openid profile apaar.read abc.credits.verify consent.write",
+        "provider": "National Academic Depository / API Setu OAuth 2.0",
+        "message": "Signed JWT session issued for Pritam Raj Chaurasiya via National Academic Depository / API Setu OAuth 2.0"
+      },
+      "details": "Signed JWT session issued for Pritam Raj Chaurasiya via National Academic Depository / API Setu OAuth 2.0",
+      "prevHash": "0xf055323d89065ccfe8d72298b905b16d9937e3c0b73bf102248644dd3ce6befa",
+      "currentHash": "0x9864e2bf6d2673d1ab8689a4cd40c99f098924fa7c00e29e3f8e24f043c4b4c8"
+    },
+    {
+      "id": "53",
+      "timestamp": "2026-10-28T16:05:38.747Z",
+      "eventType": "OAUTH_AUTHORIZE_CHALLENGE",
+      "httpStatus": 200,
+      "actorEmail": "7448569214632@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "authCode": "auth_2bb09cf6b89d995861aa65d2ef73b4bb",
+        "identifier": "7448569214632",
+        "role": "ROLE_STUDENT",
+        "scopes": [
+          "openid",
+          "profile",
+          "apaar.read",
+          "abc.credits.verify",
+          "consent.write"
+        ],
+        "challengeType": "SMS_OTP_EKYC",
+        "message": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7448569214632)"
+      },
+      "details": "Dispatched e-KYC challenge for Pritam Raj Chaurasiya (7448569214632)",
+      "prevHash": "0x9864e2bf6d2673d1ab8689a4cd40c99f098924fa7c00e29e3f8e24f043c4b4c8",
+      "currentHash": "0x99674fe824b17e38ae2d5c12fb3d8082c19988012563b6643179ef35e3caf239"
+    },
+    {
+      "id": "54",
+      "timestamp": "2026-10-28T16:05:45.187Z",
+      "eventType": "OAUTH_TOKEN_ISSUED",
+      "httpStatus": 200,
+      "actorEmail": "7448569214632@apaar-setu.gov.in",
+      "actorRole": "ROLE_STUDENT",
+      "institutePid": null,
+      "payload": {
+        "sub": "7448569214632",
+        "role": "ROLE_STUDENT",
+        "scope": "openid profile apaar.read abc.credits.verify consent.write",
+        "provider": "National Academic Depository / API Setu OAuth 2.0",
+        "message": "Signed JWT session issued for Pritam Raj Chaurasiya via National Academic Depository / API Setu OAuth 2.0"
+      },
+      "details": "Signed JWT session issued for Pritam Raj Chaurasiya via National Academic Depository / API Setu OAuth 2.0",
+      "prevHash": "0x99674fe824b17e38ae2d5c12fb3d8082c19988012563b6643179ef35e3caf239",
+      "currentHash": "0x54b319aad01fd50df3f2227bdde5f5dfbc0e5f5c567ec127e4ee7afee231f1df"
+    },
+    {
+      "id": "55",
+      "timestamp": "2026-10-28T16:06:59.157Z",
+      "eventType": "OAUTH_AUTHORIZE_CHALLENGE",
+      "httpStatus": 200,
+      "actorEmail": "514456@apaar-setu.gov.in",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "514456",
+      "payload": {
+        "authCode": "auth_6fe501b0655e7f8ee2c6c17bb761bc03",
+        "identifier": "514456",
+        "role": "ROLE_INST_NODAL",
+        "scopes": [
+          "openid",
+          "erp.sync",
+          "student.write",
+          "rls.tenant.PID-1-4920182"
+        ],
+        "challengeType": "SMS_OTP_EKYC",
+        "message": "Dispatched e-KYC challenge for LNCT Excellence Nodal Officer (514456)"
+      },
+      "details": "Dispatched e-KYC challenge for LNCT Excellence Nodal Officer (514456)",
+      "prevHash": "0x54b319aad01fd50df3f2227bdde5f5dfbc0e5f5c567ec127e4ee7afee231f1df",
+      "currentHash": "0x4f91f3c20a724b534a17a5c2b5798d5a9dff7196b00f515e9c33720e986720e5"
+    },
+    {
+      "id": "56",
+      "timestamp": "2026-10-28T16:07:04.588Z",
+      "eventType": "OAUTH_TOKEN_ISSUED",
+      "httpStatus": 200,
+      "actorEmail": "514456@apaar-setu.gov.in",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "514456",
+      "payload": {
+        "sub": "514456",
+        "role": "ROLE_INST_NODAL",
+        "scope": "openid erp.sync student.write rls.tenant.PID-1-4920182",
+        "provider": "Institutional ERP SSO / SAML 2.0 Gateway",
+        "message": "Signed JWT session issued for LNCT Excellence Nodal Officer via Institutional ERP SSO / SAML 2.0 Gateway"
+      },
+      "details": "Signed JWT session issued for LNCT Excellence Nodal Officer via Institutional ERP SSO / SAML 2.0 Gateway",
+      "prevHash": "0x4f91f3c20a724b534a17a5c2b5798d5a9dff7196b00f515e9c33720e986720e5",
+      "currentHash": "0x9eed301a2cc02418915887730416145ad4efd61b60b3549e9692aa5a3da27a80"
+    },
+    {
+      "id": "57",
+      "timestamp": "2026-10-28T16:07:14.232Z",
+      "eventType": "ANOMALY_INTAKE_LIMIT_EXCEEDED",
+      "httpStatus": 422,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "514456",
+      "payload": {
+        "id": "anom-1793203634229",
+        "timestamp": "2026-10-28T16:07:14.230Z",
+        "severity": "CRITICAL",
+        "anomalyType": "INTAKE_OVERFLOW",
+        "institutePid": "514456",
+        "instituteName": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+        "title": "AICTE Approved Intake Exceeded",
+        "details": "Admission of 61st student exceeds AICTE Approved Intake of 60.",
+        "actionTaken": "HTTP 422 Unprocessable • Admission halted and flagged in national audit"
+      },
+      "details": "{\"id\":\"anom-1793203634229\",\"timestamp\":\"2026-10-28T16:07:14.230Z\",\"severity\":\"CRITICAL\",\"anomalyType\":\"INTAKE_OVERFLOW\",\"institutePid\":\"514456\",\"instituteName\":\"Lakshmi Narain College of Technology Excellence - Demo Tenant\",\"title\":\"AICTE Approved Intake Exceeded\",\"details\":\"Admission of 61st student exceeds AICTE Approved Intake of 60.\",\"actionTaken\":\"HTTP 422 Unprocessable • Admission halted and flagged in national audit\"}",
+      "prevHash": "0x9eed301a2cc02418915887730416145ad4efd61b60b3549e9692aa5a3da27a80",
+      "currentHash": "0x6b0d4a8fbc8bd344e3a7f8eaca232365e4383161271ecd2cba4c67da10d8ae44"
+    },
+    {
+      "id": "58",
+      "timestamp": "2026-10-28T16:07:44.030Z",
+      "eventType": "STUDENT_ONBOARDED",
+      "httpStatus": 201,
+      "actorEmail": "nodal@pid1.demo",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "514456",
+      "payload": {
+        "apaarId": "4745-6225-6333",
+        "studentName": "ddggh",
+        "institutePid": "514456",
+        "merkleHash": "0x5e2e01147b1b61d88bec02c258ece5431592db9e2f37b608b54d2e7089466702",
+        "message": "Onboarded student ddggh (4745-6225-6333) with institutional ID LNCTE-CSE-2024-499."
+      },
+      "details": "Onboarded student ddggh (4745-6225-6333) with institutional ID LNCTE-CSE-2024-499.",
+      "prevHash": "0x6b0d4a8fbc8bd344e3a7f8eaca232365e4383161271ecd2cba4c67da10d8ae44",
+      "currentHash": "0xc4f192152688c4d11355f060c66abf38fc94d24de78fdf697062d95e131aa0d5"
+    },
+    {
+      "id": "59",
+      "timestamp": "2026-10-29T03:51:19.742Z",
+      "eventType": "OAUTH_AUTHORIZE_CHALLENGE",
+      "httpStatus": 200,
+      "actorEmail": "pid14920182@apaar-setu.gov.in",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "authCode": "auth_3452d60137e27213c1ee3d6243142549",
+        "identifier": "PID-1-4920182",
+        "role": "ROLE_INST_NODAL",
+        "scopes": [
+          "openid",
+          "erp.sync",
+          "student.write",
+          "rls.tenant.PID-1-4920182"
+        ],
+        "challengeType": "SMS_OTP_EKYC",
+        "message": "Dispatched e-KYC challenge for LNCT Excellence Nodal Officer (PID-1-4920182)"
+      },
+      "details": "Dispatched e-KYC challenge for LNCT Excellence Nodal Officer (PID-1-4920182)",
+      "prevHash": "0xc4f192152688c4d11355f060c66abf38fc94d24de78fdf697062d95e131aa0d5",
+      "currentHash": "0xf3a6adef95b59f1457241e97babe05e378ce77b9ace72b664871d1f0dea989b2"
+    },
+    {
+      "id": "60",
+      "timestamp": "2026-10-29T03:51:22.246Z",
+      "eventType": "OAUTH_TOKEN_ISSUED",
+      "httpStatus": 200,
+      "actorEmail": "pid14920182@apaar-setu.gov.in",
+      "actorRole": "ROLE_INST_NODAL",
+      "institutePid": "PID-1-4920182",
+      "payload": {
+        "sub": "PID-1-4920182",
+        "role": "ROLE_INST_NODAL",
+        "scope": "openid erp.sync student.write rls.tenant.PID-1-4920182",
+        "provider": "Institutional ERP SSO / SAML 2.0 Gateway",
+        "message": "Signed JWT session issued for LNCT Excellence Nodal Officer via Institutional ERP SSO / SAML 2.0 Gateway"
+      },
+      "details": "Signed JWT session issued for LNCT Excellence Nodal Officer via Institutional ERP SSO / SAML 2.0 Gateway",
+      "prevHash": "0xf3a6adef95b59f1457241e97babe05e378ce77b9ace72b664871d1f0dea989b2",
+      "currentHash": "0x6350863067ee57c84df2d91514990b2adf420e7d89b0b9cc25b745dbd1f37e2a"
+    },
+    {
+      "id": "61",
+      "timestamp": "2026-10-29T04:01:34.397Z",
+      "eventType": "OAUTH_AUTHORIZE_CHALLENGE",
+      "httpStatus": 200,
+      "actorEmail": "aictehqadmin@apaar-setu.gov.in",
+      "actorRole": "ROLE_COUNCIL_ADMIN",
+      "institutePid": null,
+      "payload": {
+        "authCode": "auth_d97c51ac7f6905c6852dc4d1bd36f021",
+        "identifier": "AICTE-HQ-ADMIN",
+        "role": "ROLE_COUNCIL_ADMIN",
+        "scopes": [
+          "openid",
+          "national.admin",
+          "fraud.registry.manage",
+          "state.analytics"
+        ],
+        "challengeType": "SMS_OTP_EKYC",
+        "message": "Dispatched e-KYC challenge for AICTE National Directorate (AICTE-HQ-ADMIN)"
+      },
+      "details": "Dispatched e-KYC challenge for AICTE National Directorate (AICTE-HQ-ADMIN)",
+      "prevHash": "0x6350863067ee57c84df2d91514990b2adf420e7d89b0b9cc25b745dbd1f37e2a",
+      "currentHash": "0xb0f80fcef8863151bee6a7fc2402e484c6c208ff6fd5c256c7a432a87a956808"
+    },
+    {
+      "id": "62",
+      "timestamp": "2026-10-29T04:01:38.188Z",
+      "eventType": "OAUTH_TOKEN_ISSUED",
+      "httpStatus": 200,
+      "actorEmail": "aictehqadmin@apaar-setu.gov.in",
+      "actorRole": "ROLE_COUNCIL_ADMIN",
+      "institutePid": null,
+      "payload": {
+        "sub": "AICTE-HQ-ADMIN",
+        "role": "ROLE_COUNCIL_ADMIN",
+        "scope": "openid national.admin fraud.registry.manage state.analytics",
+        "provider": "AICTE Regulatory Command SSO",
+        "message": "Signed JWT session issued for AICTE National Directorate via AICTE Regulatory Command SSO"
+      },
+      "details": "Signed JWT session issued for AICTE National Directorate via AICTE Regulatory Command SSO",
+      "prevHash": "0xb0f80fcef8863151bee6a7fc2402e484c6c208ff6fd5c256c7a432a87a956808",
+      "currentHash": "0x6996ff282663a52ef4b0e4ef2ec6bb732b7c9d5c2265606b99bf46fd0e2eeebc"
+    }
+  ],
+  "anomalies": [
+    {
+      "id": "anom-1793203634229",
+      "timestamp": "2026-10-28T16:07:14.230Z",
+      "severity": "CRITICAL",
+      "anomalyType": "INTAKE_OVERFLOW",
+      "institutePid": "514456",
+      "instituteName": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "title": "AICTE Approved Intake Exceeded",
+      "details": "Admission of 61st student exceeds AICTE Approved Intake of 60.",
+      "actionTaken": "HTTP 422 Unprocessable • Admission halted and flagged in national audit"
+    },
+    {
+      "id": "anom-1793199902970",
+      "timestamp": "2026-10-28T15:05:02.970Z",
+      "severity": "CRITICAL",
+      "anomalyType": "INTAKE_OVERFLOW",
+      "institutePid": "PID-1-4920182",
+      "instituteName": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "title": "AICTE Approved Intake Exceeded",
+      "details": "Admission of 61st student exceeds AICTE Approved Intake of 60.",
+      "actionTaken": "HTTP 422 Unprocessable • Admission halted and flagged in national audit"
+    },
+    {
+      "id": "anom-1793199511811",
+      "timestamp": "2026-10-28T14:58:31.811Z",
+      "severity": "HIGH",
+      "anomalyType": "DUPLICATE_INSTITUTION_ID",
+      "institutePid": "PID-1-4920182",
+      "instituteName": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "title": "Duplicate Institutional Student ID",
+      "details": "Roll ID 'LNCTE-CSE-2022-042' is already assigned to active student 'Pritam Raj Chaurasiya' (7841-9023-4412).",
+      "actionTaken": "HTTP 409 Conflict • Internal duplicate registration blocked"
+    },
+    {
+      "id": "anom-1793199511799",
+      "timestamp": "2026-10-28T14:58:31.799Z",
+      "severity": "WARNING",
+      "anomalyType": "INVALID_APAAR",
+      "institutePid": "PID-1-4920182",
+      "instituteName": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "title": "Malformed APAAR Format Rejected",
+      "details": "Attempted onboarding with invalid APAAR 'INVALID-ID'. Expected 12 digits (XXXX-XXXX-XXXX).",
+      "actionTaken": "HTTP 400 Bad Request • Record rejected at schema barrier"
+    },
+    {
+      "id": "anom-1793199511770",
+      "timestamp": "2026-10-28T14:58:31.770Z",
+      "severity": "CRITICAL",
+      "anomalyType": "INTAKE_OVERFLOW",
+      "institutePid": "PID-1-4920182",
+      "instituteName": "Lakshmi Narain College of Technology Excellence - Demo Tenant",
+      "title": "AICTE Approved Intake Exceeded",
+      "details": "Admission of 59st student exceeds AICTE Approved Intake of 60.",
+      "actionTaken": "HTTP 422 Unprocessable • Admission halted and flagged in national audit"
+    },
+    {
+      "id": "anom-101",
+      "timestamp": "2026-10-28T09:15:22.000Z",
+      "severity": "CRITICAL",
+      "anomalyType": "INTAKE_OVERFLOW",
+      "institutePid": "PID-1-9821",
+      "instituteName": "Techno Global Institute of Engineering, Jaipur",
+      "title": "Intake Quota Exceeded (61/60)",
+      "details": "College ERP pushed admission for 61st student in B.Tech CSE exceeding AICTE approved intake of 60.",
+      "actionTaken": "HTTP 422 Rejected • Flagged in AICTE National Audit"
+    },
+    {
+      "id": "anom-102",
+      "timestamp": "2026-10-28T08:42:10.000Z",
+      "severity": "HIGH",
+      "anomalyType": "DUAL_ENROLLMENT",
+      "institutePid": "PID-1-4920182",
+      "instituteName": "Lakshmi Narain College of Technology Excellence",
+      "title": "Concurrent Full-Time Enrollment Blocked",
+      "details": "Student Rohan Verma (APAAR: 8832-5519-1029) attempted admission while holding ACTIVE status at PID-1-3310.",
+      "actionTaken": "HTTP 409 Conflict • Unique index constraint enforced"
+    },
+    {
+      "id": "anom-103",
+      "timestamp": "2026-10-28T07:20:05.000Z",
+      "severity": "WARNING",
+      "anomalyType": "INVALID_APAAR",
+      "institutePid": "PID-1-7712",
+      "instituteName": "Apex Institute of Technology, Bengaluru",
+      "title": "Malformed APAAR Format Rejected",
+      "details": "Batch sync record submitted with malformed APAAR string \"1234-5678-ABCD\" (alphanumeric violation).",
+      "actionTaken": "HTTP 400 Bad Request • Format validation check failed"
+    },
+    {
+      "id": "anom-104",
+      "timestamp": "2026-10-28T06:05:44.000Z",
+      "severity": "HIGH",
+      "anomalyType": "DUPLICATE_INSTITUTION_ID",
+      "institutePid": "PID-1-4920182",
+      "instituteName": "Lakshmi Narain College of Technology Excellence",
+      "title": "Duplicate Institutional Roll ID Detected",
+      "details": "Attempted to enroll new candidate with existing roll ID \"LNCTE-CSE-2022-042\" already assigned to Pritam Raj Chaurasiya.",
+      "actionTaken": "HTTP 409 Conflict • Duplicate internal ID blocked"
+    }
+  ]
+}

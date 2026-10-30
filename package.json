@@ -1,0 +1,12 @@
+{
+  "name": "apaar-setu-monorepo",
+  "version": "2.0.0",
+  "private": true,
+  "description": "APAAR-Setu — Unified Student Data Management & Verification Platform (SIH 2026)",
+  "scripts": {
+    "dev:gateway": "cd api-gateway-node && node server.js",
+    "dev:ai": "cd ai-forensics-fastapi && python -m uvicorn main:app --host 127.0.0.1 --port 8000",
+    "dev:web": "cd web-dashboard && npm run dev",
+    "build": "cd web-dashboard && npm run build"
+  }
+}

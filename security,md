@@ -1,0 +1,27 @@
+# Zero-Trust Security Architecture & DevSecOps Checklist (v2.0)
+
+## 1. Input Sanitization & Zod Validation (`src/utils/validators.ts`)
+All user inputs (APAAR search bars, CSV batch fields, consent parameters) must be validated with Zod before state execution:
+- **APAAR ID Format:** `z.string().regex(/^\d{4}-\d{4}-\d{4}$/, "Invalid 12-digit APAAR ID format")`
+- **XSS Stripper:** Reject any string containing `<script>`, `javascript:`, `onerror=`, or SQL meta-characters (`' OR 1=1`, `--`).
+
+## 2. Row-Level Security (RLS) Enforcement Simulation
+Every data-fetching helper in `AuthRBACContext` must enforce tenant isolation:
+```typescript
+export function checkTenantAccess(
+  activeRole: RoleType,
+  userInstitutePid: string,
+  targetInstitutePid: string
+): { allowed: boolean; httpStatus: number; reason: string } {
+  if (activeRole === 'ROLE_COUNCIL_ADMIN') {
+    return { allowed: true, httpStatus: 200, reason: 'NATIONAL_SUPER_ADMIN_SCOPE' };
+  }
+  if (activeRole === 'ROLE_INST_NODAL' && userInstitutePid !== targetInstitutePid) {
+    return {
+      allowed: false,
+      httpStatus: 403,
+      reason: `PostgreSQL RLS Violation: Tenant ${userInstitutePid} cannot access records of ${targetInstitutePid}`
+    };
+  }
+  return { allowed: true, httpStatus: 200, reason: 'TENANT_SCOPE_MATCH' };
+}
