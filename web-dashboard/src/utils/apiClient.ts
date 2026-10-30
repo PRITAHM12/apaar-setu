@@ -8,8 +8,8 @@ import {
 } from '../data/seedData';
 import { ForensicScanResult, DPDPConsent, IntakeQuotaStats, AnomalyFeedItem } from '../types/apaar.types';
 
-const NODE_GATEWAY_URL = 'http://localhost:4000';
-const FASTAPI_URL = 'http://localhost:8000';
+const NODE_GATEWAY_URL = import.meta.env?.VITE_API_GATEWAY_URL || 'https://apaar-node-api.onrender.com';
+const FASTAPI_URL = import.meta.env?.VITE_PYTHON_ENGINE_URL || 'https://apaar-python-engine.onrender.com';
 
 export interface ApiResponse<T> {
   success: boolean;
