@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { useAuthRBAC } from '../../context/AuthRBACContext';
 import { apiClient } from '../../utils/apiClient';
+import { BulkScanFDRSection } from '../common/BulkScanFDRSection';
 
 interface VerificationAuditItem {
   id: string;
@@ -468,6 +469,11 @@ export const VerifierForensicView: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* ======================================================== */}
+      {/* BULK SCAN FEATURE SECTION (FDR & SECURITY DEPOSIT AUDIT) */}
+      {/* ======================================================== */}
+      <BulkScanFDRSection roleVariant="ROLE_VERIFIER" />
 
       {/* ======================================================== */}
       {/* 4. VISIBLE VERIFICATION AUDIT TRAIL & ACCESS LOGS        */}

@@ -19,6 +19,7 @@ import {
   Save
 } from 'lucide-react';
 import { useAuthRBAC } from '../../context/AuthRBACContext';
+import { BulkScanFDRSection } from '../common/BulkScanFDRSection';
 
 export interface BatchRecordResult {
   row: number;
@@ -560,6 +561,11 @@ export const NodalOfficerView: React.FC = () => {
           <span className="text-sm font-bold text-emerald-900">{successBanner}</span>
         </div>
       )}
+
+      {/* ======================================================== */}
+      {/* BULK SCAN FEATURE SECTION (FDR & SECURITY DEPOSIT AUDIT) */}
+      {/* ======================================================== */}
+      <BulkScanFDRSection roleVariant="ROLE_INST_NODAL" />
 
       {/* ======================================================== */}
       {/* 3. MASSIVE CENTRAL BULK CSV UPLOAD DRAG-AND-DROP ZONE     */}

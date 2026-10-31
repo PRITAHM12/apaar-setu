@@ -296,10 +296,10 @@ export const LoginGateway: React.FC = () => {
                   </span>
                 </div>
                 <h3 className="text-xl font-extrabold text-[#0F172A] mt-1">
-                  Select Stakeholder Identity
+                  RBAC Demo Switcher & Mock Login Gateway
                 </h3>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  Choose your administrative portal role to authenticate with your Google account.
+                  Select your documented authority role below to authenticate and enter the corresponding dashboard.
                 </p>
               </div>
 

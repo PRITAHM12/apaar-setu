@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Lock, 
   LogOut,
   GraduationCap,
   Building2,
@@ -18,7 +17,6 @@ export const TopNavbar: React.FC = () => {
     isAuthenticated,
     activeRole,
     oauthSession, 
-    auditLogs,
     setActiveScreen, 
     logout 
   } = useAuthRBAC();
@@ -147,124 +145,43 @@ export const TopNavbar: React.FC = () => {
               </div>
             ) : (
               /* ================= AUTHENTICATED NAVBAR ================= */
-              <>
-                {/* Center: Authorized Role Dashboard Title & Demo Switcher */}
-                <div className="hidden md:flex items-center space-x-3">
-                  <div className={`flex items-center space-x-2.5 px-3 py-1.5 rounded-xl border ${roleInfo.colorClass} shadow-xs`}>
-                    {roleInfo.icon}
-                    <div className="flex flex-col text-left">
-                      <span className="font-bold text-xs tracking-tight text-slate-900">
-                        {roleInfo.title}
-                      </span>
-                      <span className="text-[10px] text-slate-500 font-medium">
-                        {roleInfo.badge} • Authorized Context
-                      </span>
-                    </div>
+              <div className="flex items-center justify-end space-x-4 flex-1">
+                {/* User Name, Tenant & Active Role Badge */}
+                <div className="flex items-center space-x-3 text-right">
+                  <div className="hidden sm:flex flex-col items-end">
+                    <span className="text-xs font-semibold text-slate-600">
+                      {oauthSession?.userProfile.tenantPid ? `Tenant: ${oauthSession.userProfile.tenantPid}` : (oauthSession?.userProfile.apaarId ? `APAAR: ${oauthSession.userProfile.apaarId}` : 'National Scoped Node')}
+                    </span>
                   </div>
 
-                  {/* RBAC Demo Switcher */}
-                  <div className="hidden xl:flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
-                    <span className="text-[10px] font-black text-slate-500 px-2 uppercase tracking-wider">
-                      Demo:
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => setActiveScreen('TAB_COLLEGE')}
-                      className={`px-2 py-1 text-[11px] font-bold rounded-lg transition-all flex items-center space-x-1 ${
-                        activeRole === 'ROLE_INST_NODAL'
-                          ? 'bg-blue-900 text-white shadow-xs'
-                          : 'text-slate-700 hover:bg-slate-200'
-                      }`}
-                      title="Institute Nodal Officer (ROLE_INST_NODAL)"
-                    >
-                      <span>🏛️</span>
-                      <span>ROLE_INST_NODAL</span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setActiveScreen('TAB_STUDENT')}
-                      className={`px-2 py-1 text-[11px] font-bold rounded-lg transition-all flex items-center space-x-1 ${
-                        activeRole === 'ROLE_STUDENT'
-                          ? 'bg-emerald-700 text-white shadow-xs'
-                          : 'text-slate-700 hover:bg-slate-200'
-                      }`}
-                      title="Enrolled Technical Student (ROLE_STUDENT)"
-                    >
-                      <span>🎓</span>
-                      <span>ROLE_STUDENT</span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setActiveScreen('TAB_AICTE')}
-                      className={`px-2 py-1 text-[11px] font-bold rounded-lg transition-all flex items-center space-x-1 ${
-                        activeRole === 'ROLE_COUNCIL_ADMIN'
-                          ? 'bg-purple-900 text-white shadow-xs'
-                          : 'text-slate-700 hover:bg-slate-200'
-                      }`}
-                      title="National Regulatory Officer (ROLE_COUNCIL_ADMIN)"
-                    >
-                      <span>⚖️</span>
-                      <span>ROLE_COUNCIL_ADMIN</span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setActiveScreen('TAB_VERIFIER')}
-                      className={`px-2 py-1 text-[11px] font-bold rounded-lg transition-all flex items-center space-x-1 ${
-                        activeRole === 'ROLE_VERIFIER'
-                          ? 'bg-amber-800 text-white shadow-xs'
-                          : 'text-slate-700 hover:bg-slate-200'
-                      }`}
-                      title="Corporate HR / BGV Agency (ROLE_VERIFIER)"
-                    >
-                      <span>🔍</span>
-                      <span>ROLE_VERIFIER</span>
-                    </button>
-                  </div>
+                  {/* Active Role Badge: 'Name - ROLE_CODE' */}
+                  <span
+                    className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border shadow-2xs ${
+                      activeRole === 'ROLE_INST_NODAL'
+                        ? 'bg-blue-50 text-blue-900 border-blue-200'
+                        : activeRole === 'ROLE_STUDENT'
+                        ? 'bg-emerald-50 text-emerald-900 border-emerald-200'
+                        : activeRole === 'ROLE_COUNCIL_ADMIN'
+                        ? 'bg-purple-50 text-purple-900 border-purple-200'
+                        : 'bg-amber-50 text-amber-900 border-amber-200'
+                    }`}
+                  >
+                    {oauthSession?.userProfile.name || 'Verified User'} — {activeRole}
+                  </span>
                 </div>
 
-                {/* Right: Active Session Badge, Logs, and Sign Out */}
-                <div className="flex items-center space-x-3 flex-shrink-0">
-                  {/* Active OAuth Session Badge */}
-                  <div 
-                    className="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-xl bg-[#0F172A] text-white text-xs border border-slate-800 shadow-xs"
-                    title={`Subject: ${oauthSession?.userProfile.name} (${oauthSession?.userProfile.identifier})`}
-                  >
-                    <div className={`w-2 h-2 rounded-full ${isSystemOnline ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
-                    <div className="flex flex-col text-left max-w-[140px] truncate">
-                      <span className="font-bold text-[11px] text-emerald-400 truncate">
-                        {oauthSession?.userProfile.name || 'Verified User'}
-                      </span>
-                      <span className="text-[9px] text-slate-400 font-mono truncate">
-                        {oauthSession?.userProfile.identifier}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Security Logs Button */}
-                  <button
-                    onClick={() => setIsLogsModalOpen(true)}
-                    className="flex items-center space-x-1.5 px-3 py-2 rounded-xl border border-slate-300 text-slate-700 text-xs font-bold hover:bg-slate-800 hover:text-white hover:border-slate-800 transition-all duration-300 ease-in-out active:scale-95"
-                    title="View tamper-proof audit trail"
-                  >
-                    <Lock className="w-3.5 h-3.5 text-slate-500" />
-                    <span>Logs</span>
-                    <span className="px-1.5 py-0.2 rounded-full bg-slate-200 text-slate-800 text-[10px] font-bold">
-                      {auditLogs.length}
-                    </span>
-                  </button>
-
-                  {/* Sign Out Button */}
-                  <button
-                    id="navbar-signout-btn"
-                    onClick={logout}
-                    className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl border-2 border-rose-500 text-rose-600 text-xs font-bold hover:bg-rose-600 hover:text-white transition-all duration-300 ease-in-out hover:shadow-md hover:shadow-rose-500/20 active:scale-95"
-                    title="Terminate current session and return to Landing Page"
-                  >
-                    <LogOut className="w-3.5 h-3.5" />
-                    <span>Sign Out</span>
-                  </button>
-                </div>
-              </>
+                {/* Sign Out Button */}
+                <button
+                  id="navbar-signout-btn"
+                  type="button"
+                  onClick={logout}
+                  className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-rose-50 text-rose-700 hover:text-rose-800 hover:border-rose-300 text-xs font-bold transition-all duration-200 shadow-2xs active:scale-95"
+                  title="Terminate current session and return to Landing Page"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                  <span>Sign Out</span>
+                </button>
+              </div>
             )}
 
           </div>

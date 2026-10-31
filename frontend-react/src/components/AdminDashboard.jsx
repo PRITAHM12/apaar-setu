@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { BulkScanFDRSection } from './BulkScanFDRSection';
 
 // ============================================================================
 // SUPABASE BACKEND CONNECTIONS TEMPORARILY BYPASSED FOR SIH EVALUATION
@@ -288,6 +289,9 @@ export const AdminDashboard = () => {
             </span>
           </div>
         </div>
+
+        {/* Bulk Scan: FDR & Security Deposit Section */}
+        <BulkScanFDRSection roleVariant="ROLE_INST_NODAL" />
 
         {/* Real-Time Immutable Audit Log Stream */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">

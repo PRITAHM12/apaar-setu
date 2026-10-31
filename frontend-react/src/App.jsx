@@ -4,6 +4,7 @@ import { LoginScreen } from './components/LoginScreen';
 import { TopNavbar } from './components/TopNavbar';
 import { AdminDashboard } from './components/AdminDashboard';
 import { UserDashboard } from './components/UserDashboard';
+import { VerifierDashboard } from './components/VerifierDashboard';
 
 // ============================================================================
 // ROLE-BASED ROUTING ARCHITECTURE (STRICT 4-ROLE RBAC DISPATCH)
@@ -28,6 +29,8 @@ const ProtectedRouteGuard = () => {
       <main className="flex-1">
         {role === 'ROLE_INST_NODAL' || role === 'ROLE_COUNCIL_ADMIN' ? (
           <AdminDashboard />
+        ) : role === 'ROLE_VERIFIER' ? (
+          <VerifierDashboard />
         ) : (
           <UserDashboard />
         )}

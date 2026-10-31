@@ -146,17 +146,17 @@ export const LoginScreen = () => {
                   </span>
                 </div>
                 <h3 className="text-xl font-extrabold text-[#0F172A] mt-1">
-                  Select Stakeholder Persona
+                  RBAC Demo Switcher & Role Selector
                 </h3>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  Choose your official authority role from the national regulatory matrix.
+                  Select your documented authority role below to enter the corresponding authenticated dashboard for prototype evaluation.
                 </p>
               </div>
 
               {/* 4 Documented Role Selector Tabs */}
               <div className="space-y-2">
                 <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
-                  Documented User Roles:
+                  Select Role to Enter App:
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   
