@@ -70,9 +70,9 @@ export const LoginScreen = () => {
           {/* Left Column: Platform Overview & Official Architecture */}
           <div className="lg:col-span-6 space-y-6">
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <div className="w-11 h-11 rounded-2xl bg-blue-900 text-white flex items-center justify-center font-black shadow-lg border border-blue-800">
-                  <span className="text-emerald-400 text-xl">✦</span>
+              <div className="flex items-center space-x-3.5">
+                <div className="w-14 h-14 rounded-2xl overflow-hidden border border-amber-200/80 bg-[#FFFDF8] shadow-sm flex items-center justify-center p-0.5 flex-shrink-0">
+                  <img src="/apaar-setu-logo.jpg" alt="APAAR-SETU Logo" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <h1 className="text-2xl font-black text-slate-900 tracking-tight">APAAR-SETU</h1>

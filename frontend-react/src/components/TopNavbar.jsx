@@ -14,8 +14,8 @@ export const TopNavbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         {/* Brand & Prototype Identity */}
         <div className="flex items-center space-x-3">
-          <div className="w-9 h-9 rounded-xl bg-blue-900 text-white flex items-center justify-center font-black shadow-md border border-blue-800">
-            <span className="text-emerald-400 text-base">✦</span>
+          <div className="w-10 h-10 rounded-xl overflow-hidden border border-amber-200/80 bg-[#FFFDF8] shadow-xs flex items-center justify-center p-0.5 flex-shrink-0">
+            <img src="/apaar-setu-logo.jpg" alt="APAAR-SETU Logo" className="w-full h-full object-contain" />
           </div>
           <div>
             <div className="flex items-center space-x-2">
