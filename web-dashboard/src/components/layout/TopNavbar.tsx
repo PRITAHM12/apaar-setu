@@ -148,9 +148,9 @@ export const TopNavbar: React.FC = () => {
             ) : (
               /* ================= AUTHENTICATED NAVBAR ================= */
               <>
-                {/* Center: ONLY Authorized Role Dashboard Title */}
-                <div className="hidden md:flex items-center">
-                  <div className={`flex items-center space-x-2.5 px-4 py-2 rounded-2xl border ${roleInfo.colorClass} shadow-xs`}>
+                {/* Center: Authorized Role Dashboard Title & Demo Switcher */}
+                <div className="hidden md:flex items-center space-x-3">
+                  <div className={`flex items-center space-x-2.5 px-3 py-1.5 rounded-xl border ${roleInfo.colorClass} shadow-xs`}>
                     {roleInfo.icon}
                     <div className="flex flex-col text-left">
                       <span className="font-bold text-xs tracking-tight text-slate-900">
@@ -160,6 +160,65 @@ export const TopNavbar: React.FC = () => {
                         {roleInfo.badge} • Authorized Context
                       </span>
                     </div>
+                  </div>
+
+                  {/* RBAC Demo Switcher */}
+                  <div className="hidden xl:flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+                    <span className="text-[10px] font-black text-slate-500 px-2 uppercase tracking-wider">
+                      Demo:
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setActiveScreen('TAB_COLLEGE')}
+                      className={`px-2 py-1 text-[11px] font-bold rounded-lg transition-all flex items-center space-x-1 ${
+                        activeRole === 'ROLE_INST_NODAL'
+                          ? 'bg-blue-900 text-white shadow-xs'
+                          : 'text-slate-700 hover:bg-slate-200'
+                      }`}
+                      title="Institute Nodal Officer (ROLE_INST_NODAL)"
+                    >
+                      <span>🏛️</span>
+                      <span>ROLE_INST_NODAL</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveScreen('TAB_STUDENT')}
+                      className={`px-2 py-1 text-[11px] font-bold rounded-lg transition-all flex items-center space-x-1 ${
+                        activeRole === 'ROLE_STUDENT'
+                          ? 'bg-emerald-700 text-white shadow-xs'
+                          : 'text-slate-700 hover:bg-slate-200'
+                      }`}
+                      title="Enrolled Technical Student (ROLE_STUDENT)"
+                    >
+                      <span>🎓</span>
+                      <span>ROLE_STUDENT</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveScreen('TAB_AICTE')}
+                      className={`px-2 py-1 text-[11px] font-bold rounded-lg transition-all flex items-center space-x-1 ${
+                        activeRole === 'ROLE_COUNCIL_ADMIN'
+                          ? 'bg-purple-900 text-white shadow-xs'
+                          : 'text-slate-700 hover:bg-slate-200'
+                      }`}
+                      title="National Regulatory Officer (ROLE_COUNCIL_ADMIN)"
+                    >
+                      <span>⚖️</span>
+                      <span>ROLE_COUNCIL_ADMIN</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveScreen('TAB_VERIFIER')}
+                      className={`px-2 py-1 text-[11px] font-bold rounded-lg transition-all flex items-center space-x-1 ${
+                        activeRole === 'ROLE_VERIFIER'
+                          ? 'bg-amber-800 text-white shadow-xs'
+                          : 'text-slate-700 hover:bg-slate-200'
+                      }`}
+                      title="Corporate HR / BGV Agency (ROLE_VERIFIER)"
+                    >
+                      <span>🔍</span>
+                      <span>ROLE_VERIFIER</span>
+                    </button>
                   </div>
                 </div>
 

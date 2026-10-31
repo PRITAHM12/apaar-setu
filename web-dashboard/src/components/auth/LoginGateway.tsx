@@ -303,7 +303,7 @@ export const LoginGateway: React.FC = () => {
                 </p>
               </div>
 
-              {/* 4 Stakeholder Tabs */}
+              {/* 4 Official Stakeholder Role Selector */}
               <div className="grid grid-cols-2 gap-2.5">
                 <button
                   type="button"
@@ -318,8 +318,8 @@ export const LoginGateway: React.FC = () => {
                     <GraduationCap className="w-4 h-4" />
                   </div>
                   <div className="min-w-0">
-                    <span className="text-xs font-bold block truncate">Student Portal</span>
-                    <span className="text-[10px] text-slate-500 block truncate">DigiLocker / ABC</span>
+                    <span className="text-xs font-bold block truncate">ROLE_STUDENT</span>
+                    <span className="text-[10px] text-slate-500 block truncate">Enrolled Technical Student</span>
                   </div>
                 </button>
 
@@ -336,8 +336,8 @@ export const LoginGateway: React.FC = () => {
                     <Building2 className="w-4 h-4" />
                   </div>
                   <div className="min-w-0">
-                    <span className="text-xs font-bold block truncate">College ERP Nodal</span>
-                    <span className="text-[10px] text-slate-500 block truncate">PID-1-4920182</span>
+                    <span className="text-xs font-bold block truncate">ROLE_INST_NODAL</span>
+                    <span className="text-[10px] text-slate-500 block truncate">Institute Nodal Officer</span>
                   </div>
                 </button>
 
@@ -354,8 +354,8 @@ export const LoginGateway: React.FC = () => {
                     <Search className="w-4 h-4" />
                   </div>
                   <div className="min-w-0">
-                    <span className="text-xs font-bold block truncate">Employer BGV</span>
-                    <span className="text-[10px] text-slate-500 block truncate">Corporate Verification</span>
+                    <span className="text-xs font-bold block truncate">ROLE_VERIFIER</span>
+                    <span className="text-[10px] text-slate-500 block truncate">Corporate HR / BGV Agency</span>
                   </div>
                 </button>
 
@@ -372,8 +372,8 @@ export const LoginGateway: React.FC = () => {
                     <Landmark className="w-4 h-4" />
                   </div>
                   <div className="min-w-0">
-                    <span className="text-xs font-bold block truncate">AICTE Admin</span>
-                    <span className="text-[10px] text-slate-500 block truncate">National Directorate</span>
+                    <span className="text-xs font-bold block truncate">ROLE_COUNCIL_ADMIN</span>
+                    <span className="text-[10px] text-slate-500 block truncate">National Regulatory Officer</span>
                   </div>
                 </button>
               </div>
