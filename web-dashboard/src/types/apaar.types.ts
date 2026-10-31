@@ -35,6 +35,13 @@ export interface SemesterCredit {
   issuedAt?: string;
 }
 
+export interface StudentFlagDetails {
+  flaggedBy: string;
+  reason: string;
+  date: string;
+  flaggedByIdentifier?: string;
+}
+
 export interface StudentRecord {
   id: string;
   apaarId: string;
@@ -56,6 +63,8 @@ export interface StudentRecord {
   dateOfBirth?: string;
   gender?: string;
   email?: string;
+  isFlagged?: boolean;
+  flagDetails?: StudentFlagDetails;
 }
 
 export interface IntakeQuotaStats {

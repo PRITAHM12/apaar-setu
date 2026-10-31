@@ -72,6 +72,7 @@ interface AuthRBACContextType {
   setActiveScreen: (screen: import('../types/apaar.types').ScreenType) => void;
   isZkPrivacyEnabled: boolean;
   setIsZkPrivacyEnabled: (val: boolean) => void;
+  toggleFlagStudent: (apaarId?: string, reason?: string, flaggedBy?: string) => void;
 }
 
 const AuthRBACContext = createContext<AuthRBACContextType | undefined>(undefined);
@@ -85,7 +86,7 @@ export const AuthRBACProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [activeTenantPid, setActiveTenantPid] = useState<string>('PID-1-4920182');
   const [activeTenantName] = useState<string>('Lakshmi Narain College of Technology Excellence - Demo Tenant');
   
-  const [activeStudent] = useState<StudentRecord>(PRIMARY_STUDENT);
+  const [activeStudent, setActiveStudent] = useState<StudentRecord>(PRIMARY_STUDENT);
   const [studentsList, setStudentsList] = useState<StudentRecord[]>(INITIAL_STUDENTS);
   const [dpdpConsents, setDpdpConsents] = useState<DPDPConsent[]>(INITIAL_DPDP_CONSENTS);
   const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>(INITIAL_AUDIT_LOGS);
@@ -467,6 +468,56 @@ export const AuthRBACProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return { success: false, error: res.error || 'Failed to onboard student' };
   };
 
+  /**
+   * Global Flagged Student cascading action
+   * Allows an institution or authority to place or resolve a global flag on an APAAR record.
+   */
+  const toggleFlagStudent = (targetApaarId?: string, reason?: string, flaggedBy?: string) => {
+    const apaar = targetApaarId || activeStudent.apaarId;
+    const currentTarget = studentsList.find(s => s.apaarId === apaar) || (activeStudent.apaarId === apaar ? activeStudent : null);
+    const willFlag = !currentTarget?.isFlagged;
+
+    const updatedFlagDetails = willFlag ? {
+      flaggedBy: flaggedBy || 'LNCTS',
+      reason: reason || 'Forged FDR Document / Academic Discrepancy',
+      date: new Date().toISOString().slice(0, 10),
+      flaggedByIdentifier: activeTenantPid || 'PID-1-4920182'
+    } : undefined;
+
+    // 1. Update studentsList reactively
+    setStudentsList(prev => prev.map(s => {
+      if (s.apaarId === apaar) {
+        return {
+          ...s,
+          isFlagged: willFlag,
+          flagDetails: updatedFlagDetails
+        };
+      }
+      return s;
+    }));
+
+    // 2. Update activeStudent reactively
+    setActiveStudent(prev => {
+      if (prev.apaarId === apaar) {
+        return {
+          ...prev,
+          isFlagged: willFlag,
+          flagDetails: updatedFlagDetails
+        };
+      }
+      return prev;
+    });
+
+    // 3. Append immutable SHA-256 Audit Log
+    addAuditLog(
+      willFlag ? 'STUDENT_FLAGGED_BY_INSTITUTION' : 'STUDENT_FLAG_RESOLVED',
+      willFlag ? 423 : 200,
+      `Authority [${updatedFlagDetails?.flaggedBy || 'LNCTS'}] ${willFlag ? 'placed global FLAGGED status on' : 'resolved/cleared flag for'} Student APAAR [${apaar}] - Reason: ${updatedFlagDetails?.reason || 'Clearance Verified'}. Cascaded system-wide.`,
+      undefined,
+      activeRole
+    );
+  };
+
   return (
     <AuthRBACContext.Provider
       value={{
@@ -498,6 +549,7 @@ export const AuthRBACProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         setActiveScreen,
         isZkPrivacyEnabled,
         setIsZkPrivacyEnabled,
+        toggleFlagStudent,
       }}
     >
       {children}

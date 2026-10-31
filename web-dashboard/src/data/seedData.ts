@@ -25,6 +25,13 @@ export const PRIMARY_STUDENT: StudentRecord = {
   institutePid: 'PID-1-4920182',
   instituteName: 'Lakshmi Narain College of Technology Excellence - Demo Tenant',
   status: 'ACTIVE',
+  isFlagged: true,
+  flagDetails: {
+    flaggedBy: 'LNCTS',
+    reason: 'Forged FDR Document',
+    date: '2026-10-31',
+    flaggedByIdentifier: 'PID-1-4920182'
+  },
   dateOfBirth: '2004-07-15',
   gender: 'Male',
   email: 'pritam@demo.student',
@@ -117,6 +124,13 @@ export const INITIAL_STUDENTS: StudentRecord[] = [
     institutePid: 'PID-1-4920182',
     instituteName: 'Lakshmi Narain College of Technology Excellence - Demo Tenant',
     status: 'GRADUATED',
+    isFlagged: true,
+    flagDetails: {
+      flaggedBy: 'AICTE Sentinel',
+      reason: 'Cross-Institute Concurrent Enrollment Violation',
+      date: '2026-10-30',
+      flaggedByIdentifier: 'AICTE-HQ'
+    },
     dateOfBirth: '2002-01-30',
     gender: 'Male',
     email: 'vikram@demo.student',

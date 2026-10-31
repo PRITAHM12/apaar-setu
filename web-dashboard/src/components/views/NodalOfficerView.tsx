@@ -16,7 +16,8 @@ import {
   AlertCircle,
   FileCheck,
   SlidersHorizontal,
-  Save
+  Save,
+  Flag
 } from 'lucide-react';
 import { useAuthRBAC } from '../../context/AuthRBACContext';
 import { BulkScanFDRSection } from '../common/BulkScanFDRSection';
@@ -61,7 +62,8 @@ export const NodalOfficerView: React.FC = () => {
     onboardStudent, 
     runBatchSyncSimulator,
     triggerIntakeLimitTest,
-    addAuditLog 
+    addAuditLog,
+    toggleFlagStudent
   } = useAuthRBAC();
 
   // Course & Seat Matrix State
@@ -404,6 +406,43 @@ export const NodalOfficerView: React.FC = () => {
             <span>AICTE Section 10-K Guard Active</span>
           </span>
         </div>
+      </div>
+
+      {/* Global Flagged Student Cross-Institution Demo Trigger */}
+      <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 rounded-2xl p-4 sm:p-5 text-white border border-blue-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-md">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-xl bg-red-600/20 border border-red-500/40 text-red-400 flex items-center justify-center font-bold text-lg flex-shrink-0">
+            🚩
+          </div>
+          <div>
+            <div className="flex items-center space-x-2">
+              <h4 className="text-sm font-extrabold text-white">Global Flagged Student Cascade Demo</h4>
+              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-300 border border-blue-500/40">
+                Cross-Entity Synchronized
+              </span>
+            </div>
+            <p className="text-xs text-slate-300 mt-0.5">
+              Toggle flag on Student <strong>7841-9023-4412 (Pritam Raj)</strong> to see the stark red warning banner cascade across the student's APAAR ID card, AICTE regulatory hub, and verifier consoles.
+            </p>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => toggleFlagStudent('7841-9023-4412', 'Forged FDR Document / Academic Discrepancy', 'LNCTS')}
+          className={`px-4 py-2.5 rounded-xl font-bold text-xs flex items-center space-x-2 transition-all shadow-md active:scale-95 flex-shrink-0 ${
+            studentsList.find(s => s.apaarId === '7841-9023-4412')?.isFlagged
+              ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+              : 'bg-red-600 hover:bg-red-700 text-white'
+          }`}
+        >
+          <span>{studentsList.find(s => s.apaarId === '7841-9023-4412')?.isFlagged ? '✓' : '🚩'}</span>
+          <span>
+            {studentsList.find(s => s.apaarId === '7841-9023-4412')?.isFlagged
+              ? 'Resolve / Unflag (7841-9023-4412)'
+              : 'Flag Student (7841-9023-4412)'}
+          </span>
+        </button>
       </div>
 
       {/* ======================================================== */}
@@ -1125,6 +1164,8 @@ export const NodalOfficerView: React.FC = () => {
                     <th className="py-3 px-3">APAAR ID</th>
                     <th className="py-3 px-3">Category (NRI/OCI)</th>
                     <th className="py-3 px-3">Status</th>
+                    <th className="py-3 px-3">Trust Status</th>
+                    <th className="py-3 px-3 text-center">Institution Action</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
@@ -1147,7 +1188,7 @@ export const NodalOfficerView: React.FC = () => {
                     }
 
                     return (
-                      <tr key={s.id} className="hover:bg-slate-50/80 transition-colors">
+                      <tr key={s.id} className={`transition-colors ${s.isFlagged ? 'bg-rose-50/40 hover:bg-rose-50/70' : 'hover:bg-slate-50/80'}`}>
                         <td className="py-3 px-3">
                           <span className="font-mono font-bold text-[#0F172A] block text-xs">
                             {s.institutionalStudentId || 'PENDING'}
@@ -1184,6 +1225,38 @@ export const NodalOfficerView: React.FC = () => {
                             <CheckCircle2 className="w-3 h-3 text-emerald-600" />
                             <span>Active / Anchored</span>
                           </span>
+                        </td>
+                        <td className="py-3 px-3">
+                          {s.isFlagged ? (
+                            <div className="flex flex-col space-y-0.5">
+                              <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[10px] font-black bg-rose-600 text-white border border-rose-700 shadow-xs animate-pulse w-fit">
+                                <AlertTriangle className="w-3 h-3 text-amber-300" />
+                                <span>FLAGGED</span>
+                              </span>
+                              <span className="text-[10px] text-rose-700 font-bold leading-tight">
+                                {s.flagDetails?.flaggedBy}: {s.flagDetails?.reason}
+                              </span>
+                            </div>
+                          ) : (
+                            <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                              <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                              <span>CLEARED</span>
+                            </span>
+                          )}
+                        </td>
+                        <td className="py-3 px-3 text-center">
+                          <button
+                            type="button"
+                            onClick={() => toggleFlagStudent(s.apaarId, 'Forged FDR Document', activeTenantName)}
+                            className={`px-3 py-1 rounded-lg text-[10px] font-bold transition-all shadow-xs flex items-center space-x-1 mx-auto ${
+                              s.isFlagged
+                                ? 'bg-amber-500 hover:bg-amber-600 text-white'
+                                : 'bg-rose-600 hover:bg-rose-700 text-white'
+                            }`}
+                          >
+                            <Flag className="w-3 h-3" />
+                            <span>{s.isFlagged ? 'Resolve Flag' : 'Flag Student'}</span>
+                          </button>
                         </td>
                       </tr>
                     );

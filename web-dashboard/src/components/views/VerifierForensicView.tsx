@@ -29,6 +29,8 @@ interface VerificationAuditItem {
   verdict: 'GENUINE' | 'TAMPER_DETECTED';
   verdictScore: string;
   receiptHash: string;
+  isFlagged?: boolean;
+  flagDetails?: { flaggedBy: string; reason: string; date: string };
 }
 
 const INITIAL_AUDIT_TRAIL: VerificationAuditItem[] = [
@@ -45,6 +47,8 @@ const INITIAL_AUDIT_TRAIL: VerificationAuditItem[] = [
     verdict: 'GENUINE',
     verdictScore: '100% Ledger Match',
     receiptHash: '0x7a19c42e8b10f92a3d4e5f6a',
+    isFlagged: true,
+    flagDetails: { flaggedBy: 'LNCTS', reason: 'Forged FDR Document', date: '2026-10-31' }
   },
   {
     id: 'AUD-2026-9892',
@@ -59,6 +63,7 @@ const INITIAL_AUDIT_TRAIL: VerificationAuditItem[] = [
     verdict: 'GENUINE',
     verdictScore: '98.8% Ledger Match',
     receiptHash: '0x3f88d19a4c77e2019b8a7c6d',
+    isFlagged: false
   },
   {
     id: 'AUD-2026-9880',
@@ -73,6 +78,8 @@ const INITIAL_AUDIT_TRAIL: VerificationAuditItem[] = [
     verdict: 'TAMPER_DETECTED',
     verdictScore: 'Font Inflation Anomaly (89.2%)',
     receiptHash: '0x8f92e41b7c2091a41c5d6e7f',
+    isFlagged: true,
+    flagDetails: { flaggedBy: 'AICTE Central', reason: 'Font Inflation Anomaly', date: '2026-10-28' }
   },
   {
     id: 'AUD-2026-9855',
@@ -122,7 +129,9 @@ export const VerifierForensicView: React.FC = () => {
         consentStatus: 'APPROVED',
         verdict: 'GENUINE',
         verdictScore: '100% Cryptographic Match',
-        receiptHash: `0x${Array.from({length: 24}, () => Math.floor(Math.random()*16).toString(16)).join('')}`
+        receiptHash: `0x${Array.from({length: 24}, () => Math.floor(Math.random()*16).toString(16)).join('')}`,
+        isFlagged: matched.isFlagged,
+        flagDetails: matched.flagDetails
       };
 
       setAuditTrail(prev => [newEntry, ...prev]);
@@ -148,19 +157,23 @@ export const VerifierForensicView: React.FC = () => {
     setIsVerifying(false);
     setViewState('GENUINE');
 
+    const pritamRecord = studentsList.find(s => s.apaarId === '7841-9023-4412') || activeStudent;
+
     const newEntry: VerificationAuditItem = {
       id: `AUD-2026-${Math.floor(1000 + Math.random() * 9000)}`,
       timestamp: new Date().toISOString().replace('T', ' ').substring(0, 19),
       verifierId: 'ORG-INFOSYS-BGV',
       verifierOrg: 'Infosys Limited (Corporate BGV)',
-      candidateName: 'Pritam Raj Chaurasiya',
-      apaarId: '7841-9023-4412',
-      institutionalId: 'LNCTE-CSE-2022-042',
+      candidateName: pritamRecord.fullName,
+      apaarId: pritamRecord.apaarId,
+      institutionalId: pritamRecord.institutionalStudentId || 'LNCTE-CSE-2022-042',
       consentToken: 'TKN-DPDP-991',
       consentStatus: 'APPROVED',
       verdict: 'GENUINE',
       verdictScore: '100% Cryptographic Match',
-      receiptHash: '0x7a19c42e8b10f92a3d4e5f6a'
+      receiptHash: '0x7a19c42e8b10f92a3d4e5f6a',
+      isFlagged: pritamRecord.isFlagged,
+      flagDetails: pritamRecord.flagDetails
     };
     setAuditTrail(prev => [newEntry, ...prev]);
   };
@@ -338,6 +351,27 @@ export const VerifierForensicView: React.FC = () => {
       {viewState === 'GENUINE' && (
         <div className="bg-white rounded-2xl border-2 border-emerald-300 shadow-sm p-7 sm:p-9 space-y-6 animate-in fade-in duration-300">
           
+          {/* Global Flag Alert Banner */}
+          {student.isFlagged && (
+            <div className="w-full bg-red-600 text-white px-5 py-4 rounded-xl flex items-center justify-between shadow-lg border-2 border-red-700 animate-pulse">
+              <div className="flex items-center space-x-3.5">
+                <AlertTriangle className="w-7 h-7 text-amber-300 flex-shrink-0 animate-bounce" />
+                <div>
+                  <div className="font-black text-sm uppercase tracking-wider flex items-center space-x-2">
+                    <span>⚠️ FLAGGED BY {student.flagDetails?.flaggedBy || 'INSTITUTION'} - {student.flagDetails?.reason || 'Forged FDR Document'}</span>
+                    <span className="bg-red-800 text-[10px] px-2 py-0.5 rounded font-mono">Date: {student.flagDetails?.date || '2026-10-31'}</span>
+                  </div>
+                  <p className="text-xs text-red-100 font-medium mt-0.5">
+                    Critical Warning for Verifiers: An official regulatory or academic flag is active against this sovereign APAAR record.
+                  </p>
+                </div>
+              </div>
+              <span className="hidden sm:inline-block bg-black/30 px-3 py-1 rounded-md text-[11px] font-mono font-bold tracking-wider uppercase border border-red-400">
+                AICTE Sovereign Alert
+              </span>
+            </div>
+          )}
+
           {/* Top Verification Status Banner */}
           <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center space-x-3">
@@ -516,42 +550,67 @@ export const VerifierForensicView: React.FC = () => {
                 <th className="py-2.5 px-3">Verifier ID</th>
                 <th className="py-2.5 px-3">DPDP Consent</th>
                 <th className="py-2.5 px-3">Verdict</th>
+                <th className="py-2.5 px-3">Trust Status</th>
                 <th className="py-2.5 px-3 text-right">Receipt Hash</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
-              {auditTrail.map((a) => (
-                <tr key={a.id} className="hover:bg-slate-50/80 transition-colors">
-                  <td className="py-2.5 px-3 font-mono font-bold text-slate-700">{a.id}</td>
-                  <td className="py-2.5 px-3 font-mono text-slate-500 text-[11px]">{a.timestamp}</td>
-                  <td className="py-2.5 px-3">
-                    <span className="font-bold text-[#0F172A] block">{a.candidateName}</span>
-                    <span className="font-mono text-slate-500 text-[10px]">{a.apaarId}</span>
-                  </td>
-                  <td className="py-2.5 px-3">
-                    <span className="font-semibold text-slate-800 block text-xs">{a.verifierOrg}</span>
-                    <span className="font-mono text-[10px] text-slate-400">{a.verifierId}</span>
-                  </td>
-                  <td className="py-2.5 px-3">
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 font-mono">
-                      {a.consentToken}
-                    </span>
-                  </td>
-                  <td className="py-2.5 px-3">
-                    <span className={`inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
-                      a.verdict === 'GENUINE' 
-                        ? 'bg-emerald-100 text-emerald-900 border border-emerald-200' 
-                        : 'bg-red-100 text-red-900 border border-red-200'
-                    }`}>
-                      {a.verdict === 'GENUINE' ? <CheckCircle2 className="w-3 h-3 text-emerald-700" /> : <AlertTriangle className="w-3 h-3 text-red-700" />}
-                      <span>{a.verdict}</span>
-                    </span>
-                  </td>
-                  <td className="py-2.5 px-3 text-right font-mono text-[10px] text-slate-500">
-                    {a.receiptHash.substring(0, 14)}...
-                  </td>
-                </tr>
-              ))}
+              {auditTrail.map((a) => {
+                const studentMatch = studentsList.find(s => s.apaarId === a.apaarId);
+                const isFlagged = studentMatch ? Boolean(studentMatch.isFlagged) : Boolean(a.isFlagged);
+                const flagDetails = studentMatch?.flagDetails || a.flagDetails;
+
+                return (
+                  <tr key={a.id} className={`transition-colors ${isFlagged ? 'bg-rose-50/40 hover:bg-rose-50/70' : 'hover:bg-slate-50/80'}`}>
+                    <td className="py-2.5 px-3 font-mono font-bold text-slate-700">{a.id}</td>
+                    <td className="py-2.5 px-3 font-mono text-slate-500 text-[11px]">{a.timestamp}</td>
+                    <td className="py-2.5 px-3">
+                      <span className="font-bold text-[#0F172A] block">{a.candidateName}</span>
+                      <span className="font-mono text-slate-500 text-[10px]">{a.apaarId}</span>
+                    </td>
+                    <td className="py-2.5 px-3">
+                      <span className="font-semibold text-slate-800 block text-xs">{a.verifierOrg}</span>
+                      <span className="font-mono text-[10px] text-slate-400">{a.verifierId}</span>
+                    </td>
+                    <td className="py-2.5 px-3">
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 font-mono">
+                        {a.consentToken}
+                      </span>
+                    </td>
+                    <td className="py-2.5 px-3">
+                      <span className={`inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
+                        a.verdict === 'GENUINE' 
+                          ? 'bg-emerald-100 text-emerald-900 border border-emerald-200' 
+                          : 'bg-red-100 text-red-900 border border-red-200'
+                      }`}>
+                        {a.verdict === 'GENUINE' ? <CheckCircle2 className="w-3 h-3 text-emerald-700" /> : <AlertTriangle className="w-3 h-3 text-red-700" />}
+                        <span>{a.verdict}</span>
+                      </span>
+                    </td>
+                    <td className="py-2.5 px-3">
+                      {isFlagged ? (
+                        <div className="flex flex-col space-y-0.5">
+                          <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[10px] font-black bg-rose-600 text-white border border-rose-700 shadow-xs animate-pulse w-fit">
+                            <AlertTriangle className="w-3 h-3 text-amber-300" />
+                            <span>FLAGGED</span>
+                          </span>
+                          <span className="text-[10px] text-rose-700 font-bold leading-tight">
+                            {flagDetails?.flaggedBy || 'INSTITUTION'}: {flagDetails?.reason || 'Discrepancy'}
+                          </span>
+                        </div>
+                      ) : (
+                        <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                          <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                          <span>CLEARED</span>
+                        </span>
+                      )}
+                    </td>
+                    <td className="py-2.5 px-3 text-right font-mono text-[10px] text-slate-500">
+                      {a.receiptHash.substring(0, 14)}...
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

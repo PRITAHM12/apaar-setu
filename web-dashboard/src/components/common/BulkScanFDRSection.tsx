@@ -351,6 +351,7 @@ export const BulkScanFDRSection: React.FC<BulkScanFDRSectionProps> = ({ roleVari
                 <th className="py-3 px-3.5 text-right">Amount (₹)</th>
                 <th className="py-3 px-3.5">Merkle Hash / SFMS</th>
                 <th className="py-3 px-3.5">Validation Status</th>
+                <th className="py-3 px-3.5">Trust Status</th>
                 <th className="py-3 px-3.5 text-center">Action</th>
               </tr>
             </thead>
@@ -432,6 +433,21 @@ export const BulkScanFDRSection: React.FC<BulkScanFDRSectionProps> = ({ roleVari
                           {rec.validationMessage}
                         </p>
                       </div>
+                    </td>
+
+                    {/* Trust Status */}
+                    <td className="py-3 px-3.5">
+                      {isFlagged ? (
+                        <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[10px] font-black bg-rose-600 text-white border border-rose-700 shadow-xs animate-pulse">
+                          <AlertTriangle className="w-3 h-3 text-amber-300" />
+                          <span>FLAGGED</span>
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                          <CheckCircle2 className="w-3 h-3 text-emerald-700" />
+                          <span>CLEARED</span>
+                        </span>
+                      )}
                     </td>
 
                     {/* 7. Action Button */}

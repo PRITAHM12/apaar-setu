@@ -17,7 +17,7 @@ import { useAuthRBAC } from '../../context/AuthRBACContext';
 import { apiClient } from '../../utils/apiClient';
 
 export const CouncilAdminView: React.FC = () => {
-  const { blockedFraudRecords, auditLogs, anomaliesList } = useAuthRBAC();
+  const { blockedFraudRecords, auditLogs, anomaliesList, studentsList } = useAuthRBAC();
   const [isExporting, setIsExporting] = useState(false);
   const [isExportingNationalAudit, setIsExportingNationalAudit] = useState(false);
   const [anomalyFilter, setAnomalyFilter] = useState<'ALL' | 'CRITICAL' | 'HIGH' | 'WARNING'>('ALL');
@@ -516,6 +516,7 @@ export const CouncilAdminView: React.FC = () => {
                     <th className="py-2.5 px-3">Candidate / APAAR</th>
                     <th className="py-2.5 px-3">Active Institute</th>
                     <th className="py-2.5 px-3">Blocked Attempt</th>
+                    <th className="py-2.5 px-3">Trust Status</th>
                     <th className="py-2.5 px-3 text-right">Reason</th>
                   </tr>
                 </thead>
@@ -534,6 +535,12 @@ export const CouncilAdminView: React.FC = () => {
                         <span className="text-red-700 font-semibold block">{b.attemptedInstituteName}</span>
                         <span className="text-slate-400 font-mono text-[10px]">{b.attemptedPid}</span>
                       </td>
+                      <td className="py-2.5 px-3">
+                        <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[10px] font-black bg-rose-600 text-white border border-rose-700 shadow-xs animate-pulse">
+                          <AlertTriangle className="w-3 h-3 text-amber-300" />
+                          <span>FLAGGED</span>
+                        </span>
+                      </td>
                       <td className="py-2.5 px-3 text-right">
                         <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-50 text-red-700 border border-red-200">
                           <AlertOctagon className="w-3 h-3 text-red-600" />
@@ -549,6 +556,72 @@ export const CouncilAdminView: React.FC = () => {
             <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-center space-x-2">
               <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
               <span>PostgreSQL unique partial index constraint protects university seats from ghost enrollments and seat-blocking syndicates.</span>
+            </div>
+          </div>
+
+          {/* NATIONAL STUDENT REGISTRY & TRUST STATUS CARD */}
+          <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <div className="flex items-center space-x-2.5">
+                <AlertTriangle className="w-5 h-5 text-rose-600" />
+                <h3 className="text-sm font-extrabold text-[#0F172A]">National Student Directory & Trust Registry</h3>
+              </div>
+              <span className="text-xs font-bold bg-slate-100 text-slate-700 px-2.5 py-0.5 rounded-full border border-slate-200 font-mono">
+                {studentsList.length} Sovereign Identities
+              </span>
+            </div>
+
+            <div className="overflow-x-auto border border-slate-200 rounded-xl">
+              <table className="w-full text-left text-xs">
+                <thead className="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase text-[10px]">
+                  <tr>
+                    <th className="py-2.5 px-3">Candidate / APAAR</th>
+                    <th className="py-2.5 px-3">Enrolled Institute</th>
+                    <th className="py-2.5 px-3">Program</th>
+                    <th className="py-2.5 px-3">Trust Status</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {studentsList.map((st) => (
+                    <tr key={st.id} className={`transition-colors ${st.isFlagged ? 'bg-rose-50/50 hover:bg-rose-50/80' : 'hover:bg-slate-50'}`}>
+                      <td className="py-2.5 px-3">
+                        <span className="font-bold text-[#0F172A] block">{st.fullName}</span>
+                        <span className="font-mono text-slate-500 text-[11px]">{st.apaarId}</span>
+                      </td>
+                      <td className="py-2.5 px-3">
+                        <span className="font-semibold text-slate-800 block text-xs">{st.instituteName}</span>
+                        <span className="font-mono text-slate-400 text-[10px]">{st.institutePid}</span>
+                      </td>
+                      <td className="py-2.5 px-3 text-slate-600 text-xs">
+                        {st.program}
+                      </td>
+                      <td className="py-2.5 px-3">
+                        {st.isFlagged ? (
+                          <div className="flex flex-col space-y-0.5">
+                            <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[10px] font-black bg-rose-600 text-white border border-rose-700 shadow-xs animate-pulse w-fit">
+                              <AlertTriangle className="w-3 h-3 text-amber-300" />
+                              <span>FLAGGED</span>
+                            </span>
+                            <span className="text-[10px] text-rose-700 font-bold leading-tight">
+                              {st.flagDetails?.flaggedBy}: {st.flagDetails?.reason}
+                            </span>
+                          </div>
+                        ) : (
+                          <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                            <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                            <span>CLEARED</span>
+                          </span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex items-center justify-between">
+              <span className="font-medium">Cross-Institutional Trust Protocol: Anomaly flags propagate instantly across all connected nodes.</span>
+              <span className="font-mono text-[11px] text-blue-700 font-bold">Ledger v2.6 Online</span>
             </div>
           </div>
 
